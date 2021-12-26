@@ -4,18 +4,17 @@ import { useObserver } from 'mobx-react'
 
 import Header from './Header'
 import Footer from './Footer'
-
-// style
-import styles from './styles.module.scss'
 import Intro from './Content/Intro'
 import Description from './Content/Description'
-import Banner from 'components/Banner'
 import Design from './Content/Design'
+import Security from './Content/Security'
+import Mobile from './Content/Mobile'
+import Banner from 'components/Banner'
 
 import speed from 'sources/images/speedBanner.jpg'
 import brand from 'sources/images/brandBanner.png'
-import Security from './Content/Security'
-import Mobile from './Content/Mobile'
+
+import styles from './styles.module.scss'
 
 const Main: FC = () => {
   return useObserver(() => (
@@ -31,7 +30,7 @@ const Main: FC = () => {
             text={`Двигатель мощностью до 600 Вт позволяет развивать скорость до 25 км/ч.`}
             isOrange={false}
           />
-          <Design/>
+          <Design />
           <Security />
           <Mobile />
           <Banner

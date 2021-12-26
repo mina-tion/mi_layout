@@ -5,6 +5,14 @@
   position: relative;
   z-index: 10;
 
+  .bottomLine {
+    @include position-absolute($right:0, $bottom: -151px);
+    @include z-index-background;
+  }
+  .gradient {
+    @include position-absolute($top: 600px, $right: 0);
+    @include z-index-background;
+  }
   /* 
   @include _769 {
     height: inherit;
@@ -17,7 +25,7 @@
   .background {
     object-fit: cover;
     width: 100%;
-
+    z-index: 10;
   }
 
   .content {
@@ -26,12 +34,9 @@
     @include flex;
     @include flex-direction(column);
     height: 100%;
-
     /* @include _769 {
       padding: 40px 0;
     } */
-
-
 
     .title {
       @include title-style($colorR: #f1f1f1);

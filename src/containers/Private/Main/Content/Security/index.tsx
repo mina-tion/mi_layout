@@ -2,8 +2,8 @@ import React from 'react'
 
 import cn from 'classnames'
 
-import imgSrc1 from 'sources/images/description-1.png'
-import imgSrc2 from 'sources/images/description-2.png'
+import imgSrc1 from 'sources/images/description1.png'
+import imgSrc2 from 'sources/images/description2.png'
 import List from 'components/List'
 
 // style

@@ -1,13 +1,18 @@
 import React from 'react'
 
-import imgSrc1 from 'sources/images/description-1.png'
-import imgSrc2 from 'sources/images/description-2.png'
 import List from 'components/List'
+
+import imgSrc1 from 'sources/images/description1.png'
+import imgSrc2 from 'sources/images/description2.png'
 import lineSrc from 'sources/images/treads/description.png';
 import gradient from 'sources/images/gradients/description.png'
-// style
-import styles from './styles.module.scss'
+import gradient2 from 'sources/images/gradients/description2.png'
+import gradient3 from 'sources/images/gradients/description3.png'
+
 import { descriptionList } from 'utils/const'
+
+import styles from './styles.module.scss'
+
 
 const Description: React.FC = () => {
   return (
@@ -25,7 +30,10 @@ const Description: React.FC = () => {
         <img src={imgSrc2} alt="power2" className={styles.smallImg} />
       </div>
 
-       <img src={lineSrc} className={styles.bottomLine} alt="line" /> 
+      <img src={gradient2} className={styles.gradient2} alt="gradient" />
+      <img src={gradient3} className={styles.gradient3} alt="gradient" />
+
+      <img src={lineSrc} className={styles.bottomLine} alt="line" /> 
     </section>
   )
 }

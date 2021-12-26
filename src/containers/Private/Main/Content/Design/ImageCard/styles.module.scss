@@ -1,0 +1,74 @@
+@import 'sources/styles/mixins.scss';
+
+.card {
+  /*       flex: 1; */
+  @include width-height(560px, 550px);
+  background: #151515;
+  border-radius: 15px;
+  position: relative;
+
+  &:first-child {
+    margin-right: 10px;
+
+    &::after {
+      content: '';
+      @include position-absolute(0, 0, 0, 0);
+      z-index: 1;
+      background: linear-gradient(0deg, #0E0E0E 25.18%, rgba(14, 14, 14, 0) 40.52%);
+      border-radius: 15px;
+    }
+  }
+
+  /*       @include _620 {
+        max-height: 270px;
+      } */
+
+  img {
+    /*         position: relative;
+        z-index: 11; */
+    object-fit: cover;
+    border-radius: 15px;
+    /*         @include width-height(100%, 100%); */
+  }
+
+  .description {
+    z-index: 10;
+    @include position-absolute($bottom: 40px, $left: 60px);
+    color: #f1f1f1;
+
+    /*  @include _620 {
+          position: relative;
+          left: 0;
+          bottom: 0;
+          margin-top: 20px;
+        } */
+
+    .title {
+      color: #f1f1f1;
+      font-weight: 600;
+      font-size: 20px;
+      margin: 0 0 20px 0;
+
+      /*       @include _620 {
+            font-size: 16px;
+            color: var(--text-color);
+          } */
+    }
+
+    .text {
+      /*           @include defaultText;
+          font-weight: normal;
+          max-width: 430px;
+
+          @include _620 {
+            font-size: 12px;
+            color: var(--text-color);
+          } */
+    }
+  }
+}
+
+
+/*     @include _769 {
+      display: none;
+    } */

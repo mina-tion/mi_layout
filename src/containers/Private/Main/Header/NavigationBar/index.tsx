@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { navItems } from 'utils/navItems'
-// style
+
 import styles from './styles.module.scss'
 
 const NavigationBar: React.FC = () => {

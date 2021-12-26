@@ -1,9 +1,7 @@
 @import 'sources/styles/mixins.scss';
 
 .description {
-  /*   background-color: var(--page-background); */
-  /*   z-index: 10;
- */
+  
   position: relative;
   padding: 250px 0 120px 0;
   @include container-paddings;
@@ -11,7 +9,21 @@
   .gradient {
     @include position-absolute($bottom: 0, $left: 0);
     @include z-index-background;
+    opacity: 0.5;
   }
+
+  .gradient2 {
+    @include position-absolute($bottom: 0, $right: 0);
+    @include z-index-background;
+    opacity: 0.5;
+  }
+
+  .gradient3 {
+    @include position-absolute($bottom: 0, $right: 0);
+    @include z-index-background;
+    opacity: 0.5;
+  }
+
 
   .title {
     @include z-index-components;

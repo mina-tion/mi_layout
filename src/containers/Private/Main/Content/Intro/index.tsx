@@ -1,9 +1,9 @@
 import React from 'react'
 
 import ThemeSwitcher from 'components/ThemeSwitcher'
+
 import whiteBike from 'sources/images/dark-header-bike.png'
 
-// style
 import styles from './styles.module.scss'
 
 const Intro: React.FC = () => {
