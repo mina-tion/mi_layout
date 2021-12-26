@@ -1,0 +1,35 @@
+@import 'sources/styles/mixins.scss';
+
+.wrapper {
+  z-index: -10;
+  min-height: 100%;
+  @include flex;
+  @include flex-direction(column);
+
+  @include wideDesktop {
+    max-width: 100%;
+  }
+
+  @include desktop {
+    max-width: 1440px;
+  }
+
+  .container {
+    margin: 0 auto;
+    position: relative;
+    background-color: #222222;
+    overflow: hidden;
+    @include wideDesktop {
+      max-width: 1440px;
+    }
+
+    @include desktop {
+      max-width: $maxWidthContainer;
+    }
+
+    .page {
+      flex: 1 1 auto;
+    }
+  }
+
+}

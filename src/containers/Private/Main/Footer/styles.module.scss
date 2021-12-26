@@ -1,0 +1,18 @@
+@import 'sources/styles/mixins.scss';
+
+.footer {
+  background: var(--footer-background);
+  @include flex(center, space-between);
+  @include text-style(14px, 400, 21px);
+  @include container-paddings;
+  @include width-height(100%, 172px);
+
+
+  .left {
+    text-align: left;
+  }
+
+  .right {
+    text-align: right;
+  }
+}

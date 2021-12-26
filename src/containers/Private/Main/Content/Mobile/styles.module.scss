@@ -1,0 +1,93 @@
+@import 'sources/styles/mixins.scss';
+
+
+.mobileApp {
+  background-color: var(--page-background);
+  display: flex;
+  z-index: 11;
+  margin-bottom: 0 !important;
+/* 
+  @include _620 {
+    flex-direction: column;
+  } */
+
+  .description {
+    position: relative;
+
+    .title {
+    /*   @include fontTitle;
+      max-width: 514px;
+      color: #ff4c0d;
+      margin: 110px 0 40px 0;
+
+      @include _769 {
+        font-size: 30px;
+      }
+
+      @include _620 {
+        margin: 20px 0;
+        font-size: 25px;
+      } */
+    }
+
+    .text {
+     /*  @include defaultText;
+      max-width: 320px;
+      font-weight: normal;
+      color: var(--text-color);
+      margin: 0 0 60px 0;
+
+      @include _620 {
+        font-size: 12px;
+        margin-bottom: 40px;
+      } */
+    }
+
+    .stores {
+      display: flex;
+      list-style: none;
+      padding-left: 0;
+      max-width: 278px;
+      justify-content: space-between;
+      cursor: pointer;
+
+/*       @include _620 {
+        justify-content: space-around;
+        max-width: inherit;
+      } */
+    }
+  }
+
+  .phone {
+    background-image: var(--mobile-imgPath);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 580px;
+    height: 580px;
+    margin-left: 90px;
+    z-index: -1;
+    position: relative;
+/* 
+    @include _820 {
+      margin-left: 20px;
+    }
+
+    @include _769 {
+      background-image: url('../../../../sources/images/mobile-phone.png');
+    }
+
+    @include _620 {
+      margin: 0 auto;
+      width: 220px;
+      height: 430px;
+    } */
+  }
+}
+
+.topEllipse {
+  position: absolute;
+  top: -100px;
+  right: 0;
+  z-index: -1;
+}

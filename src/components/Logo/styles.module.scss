@@ -1,0 +1,6 @@
+@import 'sources/styles/mixins.scss';
+
+.icon {
+  @include width-height(60px, 39px);
+  margin-right: 80px;
+}

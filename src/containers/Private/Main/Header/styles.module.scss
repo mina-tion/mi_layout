@@ -1,0 +1,16 @@
+@import 'sources/styles/mixins.scss';
+
+.header {
+  @include flex(center, space-between);
+  @include width-height(100%, 130px);
+  @include container-paddings;
+
+  .headerBlock {
+    @include flex(center);
+  }
+}
+
+.gradient {
+  @include position-absolute($top: 0, $right: 0);
+  @include z-index-background;
+}

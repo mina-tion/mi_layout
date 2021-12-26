@@ -1,0 +1,6 @@
+@import 'sources/styles/mixins.scss';
+
+.content {
+  flex: 1 1 auto;
+  @include container-paddings;
+}

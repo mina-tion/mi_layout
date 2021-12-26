@@ -1,0 +1,43 @@
+@import 'sources/styles/mixins.scss';
+
+.description {
+  /*   background-color: var(--page-background); */
+  /*   z-index: 10;
+ */
+  position: relative;
+  padding: 250px 0 120px 0;
+  @include container-paddings;
+
+  .gradient {
+    @include position-absolute($bottom: 0, $left: 0);
+    @include z-index-background;
+  }
+
+  .title {
+    @include z-index-components;
+    position: relative;
+    @include title-style($colorR: #FFFFFF);
+    margin-bottom: 60px;
+    color: var(--text-color);
+
+    @include desktop {
+      display: block;
+      max-width: 80%;
+    }
+  }
+
+  .imagesContainer {
+    @include flex(flex-start, space-between);
+    max-width: 100%;
+  }
+
+  .bigImg {
+    z-index: 1;
+    position: relative;
+  }
+}
+
+.bottomLine {
+  @include position-absolute($right:0, $bottom: 0);
+  @include z-index-background;
+}

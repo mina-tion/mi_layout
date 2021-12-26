@@ -1,0 +1,40 @@
+@import 'sources/styles/mixins.scss';
+
+.switcherContainer {
+  @include width-height(250px, 40px);
+  @include flex(center, space-around);
+  border: 3px solid #f1f1f1;
+  height: 54px;
+  border-radius: 65px;
+  transition: all 0.5s ease;
+  position: relative;
+  
+
+  &::after {
+    content: "";
+    z-index: 0;
+    padding: 15px 35px;
+    border-radius: 65px;
+    @include width-height(50%, $height: 52px);
+    @include position-absolute($top: -2px, $left: -1px);
+    background: #fff;
+    transition-duration: 300ms;
+  }
+}
+
+.light,
+.dark {
+  z-index: 1;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  position: relative;
+}
+
+.dark {
+  color: rgb(255, 255, 255);
+}

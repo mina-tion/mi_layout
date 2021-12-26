@@ -1,0 +1,226 @@
+@import 'sources/styles/mixins.scss';
+
+.designBlock {
+  background-color: var(--page-background);
+  z-index: 10;
+  margin: 120px 0 120px 0;
+  @include container-paddings;
+
+  .title {
+    @include title-style;
+    margin-bottom: 60px;
+
+    @include desktop {
+      display: block;
+      max-width: 80%;
+    }
+
+  }
+
+  .imageCardContainer {
+    @include flex(flex-start, space-between);
+
+    max-width: 100%;
+
+    .image {
+      position: relative;
+
+      &::before {
+
+        @include position-absolute($top: 0, $left: 0);
+
+        display: block;
+        width: 400px;
+        height: 400px;
+
+      }
+    }
+
+    .item {
+      flex: 1;
+      height: 550px;
+      background: #151515;
+      border-radius: 15px;
+      position: relative;
+
+/*       @include _620 {
+        max-height: 270px;
+      } */
+
+      img {
+        width: 100%;
+/* 
+        @include _620 {
+          max-height: 270px;
+        } */
+      }
+
+      &:first-child {
+/*         @include _769 {
+          margin-bottom: 20px;
+        } */
+
+        img {
+/*           @include _769 {
+            height: 100%;
+          }
+
+          @include _620 {
+            max-height: 100%;
+          } */
+        }
+      }
+
+      &:last-child {
+        margin-left: 40px;
+
+/*         @include _769 {
+          margin-left: 0;
+        }
+
+        @include _620 {
+          margin-top: 120px;
+        } */
+
+        img {
+          height: 100%;
+
+/*           @include _620 {
+            max-height: 100%;
+          } */
+        }
+      }
+
+      .description {
+        position: absolute;
+        bottom: 60px;
+        left: 60px;
+        color: #f1f1f1;
+
+       /*  @include _620 {
+          position: relative;
+          left: 0;
+          bottom: 0;
+          margin-top: 20px;
+        } */
+
+        .text {
+          font-weight: 600;
+          font-size: 20px;
+          margin: 0 0 20px 0;
+
+    /*       @include _620 {
+            font-size: 16px;
+            color: var(--text-color);
+          } */
+        }
+
+        .subtext {
+/*           @include defaultText;
+          font-weight: normal;
+          max-width: 430px;
+
+          @include _620 {
+            font-size: 12px;
+            color: var(--text-color);
+          } */
+        }
+      }
+    }
+
+
+    /*     @include _769 {
+      display: none;
+    } */
+  }
+}
+
+.list {
+  @include flex();
+
+  .listItem {
+    flex-grow: 1;
+    width: 33%;
+    cursor: pointer;
+
+    &:hover {
+      .line {
+        background: #ff4c0d;
+      }
+
+      .line,
+      .text,
+      .columnTitle {
+        opacity: 1;
+      }
+    }
+
+    /*  @include _769 {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+   */
+    .itemTitle {
+      font-weight: 600;
+      font-size: 20px;
+      opacity: 0.4;
+      transition: all 0.5s ease;
+
+      /*  @include _1300 {
+        max-width: 240px;
+      }
+  
+      @include _769 {
+        max-width: 100%;
+      }
+  
+      @include _620 {
+        font-size: 16px;
+      } */
+    }
+
+    .line {
+      height: 3px;
+      width: 100%;
+      background: var(--text-color);
+      opacity: 0.4;
+      transition: all 0.5s ease;
+    }
+
+    .text {
+      /*  @include defaultText; */
+      max-width: 360px;
+      opacity: 0.4;
+      transition: all 0.5s ease;
+      /* 
+      @include _769 {
+        max-width: 470px;
+      }
+  
+      @include _620 {
+        font-size: 12px;
+      } */
+    }
+
+    .columnImg {
+      display: none;
+
+      /*  @include _769 {
+        display: block;
+        width: 100%;
+      } */
+    }
+  }
+
+  .column.active {
+    .line {
+      background: #ff4c0d;
+    }
+
+    .line,
+    .text,
+    .columnTitle {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@import 'sources/styles/mixins.scss';
+
+.banner {
+  @include width-height(100%, 600px);
+  position: relative;
+  z-index: 10;
+
+  /* 
+  @include _769 {
+    height: inherit;
+  }
+
+  @include _620 {
+    margin-bottom: 0 !important;
+  } */
+
+  .background {
+    object-fit: cover;
+    width: 100%;
+
+  }
+
+  .content {
+    @include position-absolute($top: 120px, $left: 140px);
+    width: 388px;
+    @include flex;
+    @include flex-direction(column);
+    height: 100%;
+
+    /* @include _769 {
+      padding: 40px 0;
+    } */
+
+
+
+    .title {
+      @include title-style($colorR: #f1f1f1);
+      margin: 110px 0 40px 0;
+
+      /*       @include _769 {
+        font-size: 30px;
+      }
+
+      @include _620 {
+        font-size: 25px;
+        margin-top: 220px;
+      } */
+    }
+
+    .text {
+      @include text-style(14px, 400, 21px, $color: #f1f1f1, $letter-spacing: -0.01em);
+
+      /*       max-width: 285px;
+ */
+      margin: 0;
+      /* 
+      @include _620 {
+        font-size: 12px;
+      } */
+    }
+  }
+}
+
+.line {
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  /* 
+  @include _620 {
+    display: none;
+  } */
+}
+
+.orange {
+  color: #FF4C0D !important;
+}
+
+.black {
+  color: #151515 !important;
+}
