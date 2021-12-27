@@ -1,0 +1,73 @@
+@import 'sources/styles/mixins.scss';
+/* @import 'sources/styles/mixins/media-mixin.scss';
+@import 'sources/styles/mixins/typography-mixin.scss'; */
+
+.slider {
+ display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 100%; 
+
+ /*  @include _1100 {
+    align-items: center;
+  } */
+
+  /* .slide {
+    background: var(--review-item-background);
+    border-radius: 15px;
+    padding: 28px;
+    max-width: 460px;
+    box-sizing: border-box;
+    min-height: 290px; */
+/* 
+    @include _1100 {
+      max-width: 360px;
+      max-height: 285px;
+    }
+
+    @include _820 {
+      min-width: 100%;
+      padding-bottom: 0;
+      max-height: 270px;
+    }
+
+    @include _375 {
+      overflow-y: scroll;
+    } */
+
+    .name {
+      color: var(--text-color);
+      font-weight: 600;
+      font-size: 20px;
+      margin: 0 0 14px 0;
+
+     /*  @include _620 {
+        font-size: 16px;
+      } */
+    }
+
+    .orangeLine {
+      width: 100px;
+      height: 3px;
+      background: var(--review-line-background);
+    }
+
+    .text {
+/*       @include defaultText;
+ */      color: var(--text-color);
+      font-weight: normal;
+
+    /*   @include _620 {
+        font-size: 12px;
+      } */
+    }
+
+    .innerText {
+     /*  @include defaultText; */
+      margin: 0;
+      color: var(--text-color);
+      font-weight: normal;
+    }
+  }

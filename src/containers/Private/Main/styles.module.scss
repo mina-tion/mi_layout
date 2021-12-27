@@ -5,13 +5,21 @@
   min-height: 100%;
   @include flex;
   @include flex-direction(column);
+  box-sizing: content-box;
+  width: 100%;
 
-  @include wideDesktop {
-    max-width: 100%;
-  }
+/*   @include wideDesktop {
+/*     max-width: 100%;
+
+ */ 
+/*     width: 100%; }
 
   @include desktop {
-    max-width: 1440px;
+    max-width: 100%;
+    width: 100%;
+  }  */
+  @include laptop {
+    max-width: 992px;
   }
 
   .container {
@@ -19,13 +27,16 @@
     position: relative;
     background-color: #222222;
     overflow: hidden;
+    max-width: 1440px;
+
 
     @include wideDesktop {
-      max-width: 1440px;
+      max-width: 1920px;
+      @include adaptive-value('max-width', 1920px, 1440px, 1);
     }
 
     @include desktop {
-      max-width: $maxWidthContainer;
+      max-width: 1440px;
     }
 
     .page {

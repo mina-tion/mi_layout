@@ -3,7 +3,8 @@
 .banner {
   @include width-height(100%, 600px);
   position: relative;
-  z-index: 10;
+  @include z-index-components;
+  margin-bottom: 120px;
 
   .bottomLine {
     @include position-absolute($right:0, $bottom: -151px);
@@ -24,8 +25,7 @@
 
   .background {
     object-fit: cover;
-    width: 100%;
-    z-index: 10;
+    @include width-height(100%, 100%);
   }
 
   .content {
@@ -33,7 +33,8 @@
     width: 388px;
     @include flex;
     @include flex-direction(column);
-    height: 100%;
+    overflow: hidden;
+    /* height: 100%; */
     /* @include _769 {
       padding: 40px 0;
     } */

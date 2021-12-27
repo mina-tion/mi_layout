@@ -1,0 +1,61 @@
+@import 'sources/styles/mixins.scss';
+
+.safety {
+  background-color: var(--page-background);
+
+  margin-bottom: 120px;
+  @include container-paddings;
+  position: relative;
+
+  .gradient { 
+    @include position-absolute($bottom: -300px, $left: 0);
+  
+  }
+
+  .title {
+    @include title-style;
+    margin-bottom: 60px;
+    
+    @include desktop {
+      display: block;
+      max-width: 80%;
+    }
+  }
+
+  .imagesContainer {
+    @include flex(flex-start, space-between);
+    @include wideDesktop { 
+      @include flex(flex-start, center);
+    }
+
+
+   max-width: 100%; 
+
+    /*     @include _769 {
+      display: none;
+    } */
+
+    .bigImg {
+      position: relative;
+      z-index: 10;
+
+      @include wideDesktop { 
+        margin-right: 40px;
+      }
+      /*       @include _769 {
+        max-width: 100%;
+      } */
+    }
+
+    .smallImg {
+      position: relative;
+      z-index: 1;
+      /*      height: 300px; */
+      // margin-left: 40px;
+      /*  @include _769 {
+        max-width: 100%;
+        margin-left: 0;
+      } */
+    }
+  }
+}

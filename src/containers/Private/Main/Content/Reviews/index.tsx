@@ -3,28 +3,25 @@ import React from 'react'
 import imgSrc1 from 'sources/images/description-1.png'
 import imgSrc2 from 'sources/images/description-2.png'
 import List from 'components/List'
+import Button from 'components/Button'
+import Slider from './Slider'
 
 // style
 import styles from './styles.module.scss'
-import { descriptionList } from 'utils/const'
+import { descriptionList } from 'utils/lists'
 
-const Description: React.FC = () => {
+const Reviews: React.FC = () => {
   return (
-    <section className={styles.description}>
-      <h2 className={styles.title}>
-        Мощная батарея и экономичный расход заряда позволяют преодолевать расстояния до 45 км
-      </h2>
+    <section className={styles.reviews}>
+      <h2 className={styles.title}>Отзывы о Mi Scooter Pro 2</h2>
 
-      <List list={descriptionList} />
+    {/*   <Slider />  */}
 
-      <div className={styles.imagesContainer}>
-        <img src={imgSrc1} alt="power1" className={styles.bigImg} />
-        <img src={imgSrc2} alt="power2" className={styles.smallImg} />
+      <div className={styles.controls}>
+        <Button text='Оставить отзыв'/>
       </div>
-
-      {/*   <img src={lineSrc} className={styles.bottomLine} alt="line" /> */}
     </section>
   )
 }
 
-export default Description
+export default Reviews

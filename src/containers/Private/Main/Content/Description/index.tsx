@@ -4,12 +4,12 @@ import List from 'components/List'
 
 import imgSrc1 from 'sources/images/description1.png'
 import imgSrc2 from 'sources/images/description2.png'
-import lineSrc from 'sources/images/treads/description.png';
+import thread from 'sources/images/threads/description.png';
 import gradient from 'sources/images/gradients/description.png'
 import gradient2 from 'sources/images/gradients/description2.png'
 import gradient3 from 'sources/images/gradients/description3.png'
 
-import { descriptionList } from 'utils/const'
+import { descriptionList } from 'utils/lists'
 
 import styles from './styles.module.scss'
 
@@ -33,7 +33,7 @@ const Description: React.FC = () => {
       <img src={gradient2} className={styles.gradient2} alt="gradient" />
       <img src={gradient3} className={styles.gradient3} alt="gradient" />
 
-      <img src={lineSrc} className={styles.bottomLine} alt="line" /> 
+      <img src={thread} className={styles.thread} alt="thread" /> 
     </section>
   )
 }

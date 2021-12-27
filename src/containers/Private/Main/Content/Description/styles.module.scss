@@ -41,15 +41,21 @@
   .imagesContainer {
     @include flex(flex-start, space-between);
     max-width: 100%;
+    @include wideDesktop { 
+      @include flex(flex-start,  space-around);
+    }
   }
 
   .bigImg {
+    @include wideDesktop { 
+      margin-right: 40px;
+    }
     z-index: 1;
     position: relative;
   }
 }
 
-.bottomLine {
+.thread {
   @include position-absolute($right:0, $bottom: 0);
   @include z-index-background;
 }

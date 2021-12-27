@@ -1,137 +1,103 @@
 @import 'sources/styles/mixins.scss';
 
-.description {
+.questions {
+  display: flex;
+  justify-content: space-between;
   background-color: var(--page-background);
   z-index: 10;
-  margin: 250px 0 120px 0;
+  margin-bottom: 120px;
+  overflow-x: clip;
   @include container-paddings;
 
-  .title {
-    @include title-style($colorR: #FFFFFF);
-    margin-bottom: 60px;
-    color: var(--text-color);
 
-    @include desktop {
-      display: block;
-      max-width: 80%;
-    }
-
+  .thread { 
+    @include position-absolute($bottom: 0, $left: 0);
+    z-index: -1;
   }
 
-  .imagesContainer {
-    @include flex(flex-start, space-between);
+  .gradient { 
+    @include position-absolute($bottom: 0, $left: 0);
+    z-index: 0;
+  }
 
-    max-width: 100%;
+/* 
+  @include _769 {
+    flex-direction: column;
+  } */
 
-    /*     @include _769 {
-      display: none;
+  .description {
+    min-width: 50%;
+
+   /*  @include _769 {
+      max-width: 100%;
+      margin-bottom: 78px;
     } */
 
-    .bigImg {
+    button:last-child {
+      margin-top: 60px;
+    }
 
+    .text:nth-child(2) {
+      margin-bottom: 20px;
+    }
 
-      /*       @include _769 {
-        max-width: 100%;
+    .title {
+      @include title-style;
+      margin: 0 0 40px 0;
+      color: #ff4c0d;
+      max-width: 415px;
+
+/*       @include _769 {
+        font-size: 30px;
+      }
+
+      @include _620 {
+        font-style: 25px;
       } */
     }
 
-    .smallImg {
-      /*      height: 300px; */
-      // margin-left: 40px;
-      /*  @include _769 {
-        max-width: 100%;
-        margin-left: 0;
+    .text {
+      font-weight: normal;
+      font-size: 14px;
+      color: var(--text-color);
+      max-width: 312px;
+      margin: 0;
+/* 
+      @include _769 {
+        max-width: 417px;
+      }
+
+      @include _620 {
+        font-size: 12px;
       } */
     }
   }
 }
 
-.list {
-  @include flex();
+.leftEllipse {
+  position: absolute;
+  left: 0;
+  top: -230px;
+  z-index: -1;
+}
 
-  .listItem {
-    flex-grow: 1;
-    width: 33%;
-    cursor: pointer;
+.ellipse {
+  position: absolute;
+  right: 0;
+  top: 135px;
+  z-index: -1;
+}
 
-    &:hover {
-      .line {
-        background: #ff4c0d;
-      }
-
-      .line,
-      .text,
-      .columnTitle {
-        opacity: 1;
-      }
-    }
-
-    /*  @include _769 {
-      width: 100%;
-      margin-bottom: 30px;
-    }
-   */
-    .itemTitle {
-      font-weight: 600;
-      font-size: 20px;
-      opacity: 0.4;
-      transition: all 0.5s ease;
-
-      /*  @include _1300 {
-        max-width: 240px;
-      }
-  
-      @include _769 {
-        max-width: 100%;
-      }
-  
-      @include _620 {
-        font-size: 16px;
-      } */
-    }
-
-    .line {
-      height: 3px;
-      width: 100%;
-      background: var(--text-color);
-      opacity: 0.4;
-      transition: all 0.5s ease;
-    }
-
-    .text {
-      /*  @include defaultText; */
-      max-width: 360px;
-      opacity: 0.4;
-      transition: all 0.5s ease;
-      /* 
-      @include _769 {
-        max-width: 470px;
-      }
-  
-      @include _620 {
-        font-size: 12px;
-      } */
-    }
-
-    .columnImg {
-      display: none;
-
-      /*  @include _769 {
-        display: block;
-        width: 100%;
-      } */
-    }
-  }
-
-  .column.active {
-    .line {
-      background: #ff4c0d;
-    }
-
-    .line,
-    .text,
-    .columnTitle {
-      opacity: 1;
-    }
-  }
+.lineIcon {
+  position: absolute;
+  left: 70px;
+  top: 0px;
+  z-index: -1;
+  transform: scale(1.1);
+/* 
+  @include _769 {
+    left: 201px;
+    top: 468px;
+    transform: scale(1.1) rotate(45deg);
+  } */
 }

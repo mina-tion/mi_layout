@@ -3,17 +3,18 @@ import React from 'react'
 import imgSrc1 from 'sources/images/description-1.png'
 import imgSrc2 from 'sources/images/description-2.png'
 import List from 'components/List'
-
+import QuestionList from './QuestionList'
+import gradient from 'sources/images/gradients/questions.png'
+import thread from 'sources/images/threads/questions.png'
 // style
 import styles from './styles.module.scss'
-import { descriptionList } from 'utils/const'
+import { descriptionList } from 'utils/lists'
 
 const Questions: React.FC = () => {
   return (
     <section className={styles.questions}>
-       {/*  <img src={ellipseSrc} className={styles.ellipse} alt="ellipse" />
-
-        <img src={lineSrc} className={styles.lineIcon} alt="line" /> */}
+        <img src={gradient} className={styles.gradient} alt="ellipse" />
+        <img src={thread} className={styles.thread} alt="line" /> 
 
         <div className={styles.description}>
           <div className={styles.title}>Часто задаваемые вопросы</div>
@@ -26,7 +27,7 @@ const Questions: React.FC = () => {
   
         </div>
 
-  {/*       <QuestionsList /> */}
+        <QuestionList /> 
       </section>
 
    /*    <Preview /> */

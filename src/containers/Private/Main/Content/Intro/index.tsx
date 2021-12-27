@@ -13,11 +13,11 @@ const Intro: React.FC = () => {
 
       <div className={styles.introContainer}>
         <h1 className={styles.introTitle}>
-          Стильный электросамокат <br />с мощным аккумулятором
+          Стильный электросамокат с мощным аккумулятором
         </h1>
         <div className={styles.introText}>
           Улучшенная производительность для дальних путешествий. <br />
-          Работает так же просто, <br /> как и выглядит.
+          Работает так же просто, <br/> как и выглядит.
         </div>
 
         <ThemeSwitcher />

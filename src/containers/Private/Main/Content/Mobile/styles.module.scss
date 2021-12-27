@@ -2,45 +2,63 @@
 
 
 .mobileApp {
-  background-color: var(--page-background);
-  display: flex;
-  z-index: 11;
+  @include container-paddings;
+  @include flex;
+  position: relative;
   margin-bottom: 0 !important;
 /* 
   @include _620 {
     flex-direction: column;
   } */
+  .thread { 
+    @include position-absolute($bottom: 383px, $right: 0);
+    z-index: 5;
+/*     @include z-index-components; */
+  }
+
+  .gradient { 
+    @include position-absolute($bottom: 0px, $right: 0);
+  }
+  .gradient2 { 
+    @include position-absolute($bottom: 0px, $left: 0);
+  }
 
   .description {
+    
     position: relative;
+    margin-right: 75px;
+    @include z-index-components;
+
+    .icon { 
+      margin-right: 20px;
+    }
 
     .title {
-    /*   @include fontTitle;
-      max-width: 514px;
-      color: #ff4c0d;
-      margin: 110px 0 40px 0;
+    @include title-style;
+    max-width: 514px;
+    margin: 110px 0 40px 0;
 
-      @include _769 {
+/*       @include _769 {
         font-size: 30px;
       }
 
       @include _620 {
         margin: 20px 0;
         font-size: 25px;
-      } */
+      }  */
     }
 
     .text {
-     /*  @include defaultText;
-      max-width: 320px;
+/*       @include defaultText;
+ */   max-width: 320px;
       font-weight: normal;
       color: var(--text-color);
       margin: 0 0 60px 0;
-
+/* 
       @include _620 {
         font-size: 12px;
         margin-bottom: 40px;
-      } */
+      }  */
     }
 
     .stores {
@@ -59,15 +77,8 @@
   }
 
   .phone {
-    background-image: var(--mobile-imgPath);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    width: 580px;
-    height: 580px;
-    margin-left: 90px;
-    z-index: -1;
     position: relative;
+    @include z-index-components;
 /* 
     @include _820 {
       margin-left: 20px;

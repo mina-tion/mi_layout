@@ -7,14 +7,15 @@ import Footer from './Footer'
 import Intro from './Content/Intro'
 import Description from './Content/Description'
 import Design from './Content/Design'
-import Security from './Content/Security'
 import Mobile from './Content/Mobile'
 import Banner from 'components/Banner'
-
+import Reviews from './Content/Reviews'
 import speed from 'sources/images/speedBanner.jpg'
 import brand from 'sources/images/brandBanner.png'
 
 import styles from './styles.module.scss'
+import Safety from './Content/Safety'
+import Questions from './Content/Questions'
 
 const Main: FC = () => {
   return useObserver(() => (
@@ -31,7 +32,7 @@ const Main: FC = () => {
             isOrange={false}
           />
           <Design />
-          <Security />
+          <Safety />
           <Mobile />
           <Banner
             imgUrl={brand}
@@ -41,6 +42,8 @@ const Main: FC = () => {
             `}
             isOrange={true}
           />
+          <Reviews />
+          <Questions/>
         </main>
         <Footer />
       </div>

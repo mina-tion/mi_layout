@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
 import Logo from 'components/Logo'
-import thread from 'sources/images/treads/banner.png'
+import thread from 'sources/images/threads/banner.png'
 import gradient from 'sources/images/gradients/banner.png'
 // style
 import styles from './styles.module.scss'

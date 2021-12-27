@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
-import orange from 'sources/images/oLogo.svg'
-import white from 'sources/images/wLogo.svg'
+import orange from 'sources/images/icons/oLogo.svg'
+import white from 'sources/images/icons/wLogo.svg'
 
 // style
 import styles from './styles.module.scss'
