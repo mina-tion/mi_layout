@@ -1,0 +1,22 @@
+@import 'sources/styles/mixins.scss';
+
+.prevArrow {
+    cursor: pointer;
+    @include position-absolute($bottom: -75px, $right: 246px);
+    border-radius: 50%;
+    background-color: #F1F1F1;
+    @include width-height(54px, 54px);
+    transition: all 0.5s ease;
+
+    @include flex(center, center);
+    padding-right: 5px;
+
+    &:hover {
+        background-color: #FF4C0D;
+        .arrow {
+            filter: invert(1);
+            transition: all 0.7s ease;
+        }
+    }
+
+}

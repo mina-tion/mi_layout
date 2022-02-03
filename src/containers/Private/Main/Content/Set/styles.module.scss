@@ -1,0 +1,62 @@
+@import 'sources/styles/mixins.scss';
+
+.set {
+  background: var(--cardBackground);
+  max-width: 1160px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  @include flex(flex-start, space-between);
+  padding: 60px 80px;
+  border-radius: 15px;
+  height: 550px;
+  position: relative;
+  @include z-index-components;
+  transition: all 0.5s ease;
+
+  .gradient {
+    @include position-absolute($top: 0, $right: 0);
+    border-radius: 15px;
+  }
+
+  .description {
+    @include flex(space-between, space-between);
+    @include flex-direction(column);
+    height: 100%;
+
+    .title {
+      @include title-style($colorR: var(--textColor));
+      max-width: 500px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      @include text-style(30px, 600, 36px, $color: #ff4c0d);
+    }
+  }
+
+  .setContainer {
+    @include flex(flex-start);
+    @include flex-direction(column);
+    margin-top: 4px;
+
+    .setTitle {
+      @include text-style(20px, 600, $color: var(--textColor));
+      margin-bottom: 25px;
+    }
+
+    .setList {
+      list-style: none;
+      padding-left: 0;
+      @include text-style(14px, $color: var(--textColor));
+
+      li {
+        margin-bottom: 18px;
+      }
+    }
+  }
+}
+
+.bike {
+  @include position-absolute($left: 370px, $top: -100px);
+  z-index: 5;
+}
