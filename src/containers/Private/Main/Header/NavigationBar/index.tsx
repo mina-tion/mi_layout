@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { navItems } from 'utils/navItems'
+import { navItems } from 'utils/lists'
 
 import styles from './styles.module.scss'
 

@@ -1,17 +1,41 @@
 @import 'sources/styles/mixins.scss';
 
 .button {
-  z-index: 10;
+  @include z-index-components;
   background: #F1F1F1;
   border: none;
   border-radius: 65px;
   padding: 15px 35px;
   text-align: center;
-  height: 54px;
-  @include text-style(16px, 700, 24px, $color: #151515);
+  @include width-height(fit-content, 54px);
+
+  .text {
+    @include text-style(16px, 700, 24px, $color: #151515);
+  }
 
   &:hover {
     cursor: pointer;
-    background: #c2bebe;
+    background: #FF4C0D;
+    color: #F1F1F1;
+
+    .text {
+      color: #F1F1F1;
+    }
+  }
+
+}
+
+.orange {
+  background: #FF4C0D;
+  color: #F1F1F1;
+
+  .text {
+    color: #F1F1F1;
+  }
+
+  &:hover {
+    .text {
+      color: #151515;
+    }
   }
 }

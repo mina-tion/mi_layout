@@ -6,99 +6,69 @@
   @include flex;
   position: relative;
   margin-bottom: 0 !important;
-/* 
-  @include _620 {
-    flex-direction: column;
-  } */
-  .thread { 
+
+  .thread {
     @include position-absolute($bottom: 383px, $right: 0);
     z-index: 5;
-/*     @include z-index-components; */
   }
 
-  .gradient { 
+  .gradient {
     @include position-absolute($bottom: 0px, $right: 0);
   }
-  .gradient2 { 
+
+  .gradient2 {
     @include position-absolute($bottom: 0px, $left: 0);
   }
 
   .description {
-    
     position: relative;
     margin-right: 75px;
+
+    @include wideDesktop {
+      margin-right: 300px;
+    }
+
     @include z-index-components;
 
-    .icon { 
-      margin-right: 20px;
+    .icon {
+      &:first-child {
+        margin-right: 20px;
+
+        @include wideDesktop {
+          margin-right: 50px;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     .title {
-    @include title-style;
-    max-width: 514px;
-    margin: 110px 0 40px 0;
+      @include title-style;
+      max-width: 514px;
+      margin: 110px 0 40px 0;
 
-/*       @include _769 {
-        font-size: 30px;
+      @include wideDesktop {
+        max-width: 100%;
       }
-
-      @include _620 {
-        margin: 20px 0;
-        font-size: 25px;
-      }  */
     }
 
     .text {
-/*       @include defaultText;
- */   max-width: 320px;
+      width: 320px;
       font-weight: normal;
-      color: var(--text-color);
-      margin: 0 0 60px 0;
-/* 
-      @include _620 {
-        font-size: 12px;
-        margin-bottom: 40px;
-      }  */
-    }
+      color: var(--textColor);
+      margin-bottom: 60px;
+      letter-spacing: -0.01em;
 
-    .stores {
-      display: flex;
-      list-style: none;
-      padding-left: 0;
-      max-width: 278px;
-      justify-content: space-between;
-      cursor: pointer;
-
-/*       @include _620 {
-        justify-content: space-around;
-        max-width: inherit;
-      } */
+      @include wideDesktop {
+        max-width: 550px;
+      }
     }
   }
 
   .phone {
     position: relative;
     @include z-index-components;
-/* 
-    @include _820 {
-      margin-left: 20px;
-    }
-
-    @include _769 {
-      background-image: url('../../../../sources/images/mobile-phone.png');
-    }
-
-    @include _620 {
-      margin: 0 auto;
-      width: 220px;
-      height: 430px;
-    } */
   }
-}
-
-.topEllipse {
-  position: absolute;
-  top: -100px;
-  right: 0;
-  z-index: -1;
 }

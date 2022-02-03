@@ -1,7 +1,5 @@
 import React from 'react'
 
-import List from 'components/List'
-
 import safety from 'sources/images/safety.png'
 import safety2 from 'sources/images/safety2.png'
 import gradient from 'sources/images/gradients/safety.png'
@@ -15,7 +13,14 @@ const Safety: React.FC = () => {
     <section className={styles.safety}>
       <h2 className={styles.title}>Заботится о вашей безопасности</h2>
 
-      <List list={securityList} />
+      <ul className={styles.list}>
+        {securityList.map((item: any) => (
+          <li key={item.id} className={styles.listItem}>
+            <h4 className={styles.itemTitle}>{item.title}</h4>
+            <p className={styles.text}>{item.text}</p>
+          </li>
+        ))}
+      </ul>
 
       <div className={styles.imagesContainer}>
         <img src={safety} alt="power1" className={styles.bigImg} />

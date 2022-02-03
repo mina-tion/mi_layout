@@ -3,37 +3,20 @@
 .reviews {
   overflow-x: hidden;
   margin-bottom: 120px;
-  background-color: var(--page-background);
   @include container-paddings;
+  padding-right: 0;
+  @include z-index-components;
+
   .title {
-    @include title-style;
-    color: #ff4c0d;
+    @include title-style($colorR: #ff4c0d);
     margin: 0 0 40px 0;
-
-/*     @include _769 {
-      font-size: 30px;
-    }
-
-    @include _620 {
-      font-size: 25px;
-    } */
   }
 
   .controls {
-    display: flex;
-    justify-content: space-between;
-/* 
-    @include _620 {
-      flex-direction: column;
-    }
- */
+    @include flex(flex-start, space-between);
+
     button {
       max-width: 190px;
-
-/*       @include _375 {
-        max-width: 100%;
-        margin-top: 8px;
-      } */
     }
   }
 }

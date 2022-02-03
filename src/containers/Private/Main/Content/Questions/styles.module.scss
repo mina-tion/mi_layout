@@ -1,103 +1,45 @@
 @import 'sources/styles/mixins.scss';
 
 .questions {
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--page-background);
-  z-index: 10;
+  @include flex(flex-start, space-between);
   margin-bottom: 120px;
   overflow-x: clip;
+  position: relative;
   @include container-paddings;
 
 
-  .thread { 
-    @include position-absolute($bottom: 0, $left: 0);
-    z-index: -1;
+  .thread {
+    @include position-absolute($top: 500px, $left: 0);
+    @include z-index-background;
   }
 
-  .gradient { 
-    @include position-absolute($bottom: 0, $left: 0);
-    z-index: 0;
+  .gradient {
+    @include position-absolute($top: -230px, $left: 0);
+    @include z-index-background;
   }
-
-/* 
-  @include _769 {
-    flex-direction: column;
-  } */
 
   .description {
+    @include z-index-components;
     min-width: 50%;
-
-   /*  @include _769 {
-      max-width: 100%;
-      margin-bottom: 78px;
-    } */
-
-    button:last-child {
-      margin-top: 60px;
-    }
 
     .text:nth-child(2) {
       margin-bottom: 20px;
     }
 
+    .text:nth-child(3) {
+      margin-bottom: 60px;
+    }
+
     .title {
       @include title-style;
       margin: 0 0 40px 0;
-      color: #ff4c0d;
       max-width: 415px;
-
-/*       @include _769 {
-        font-size: 30px;
-      }
-
-      @include _620 {
-        font-style: 25px;
-      } */
     }
 
     .text {
-      font-weight: normal;
-      font-size: 14px;
-      color: var(--text-color);
+      @include text-style(14px, 400, 21px, $color: var(--textColor));
       max-width: 312px;
       margin: 0;
-/* 
-      @include _769 {
-        max-width: 417px;
-      }
-
-      @include _620 {
-        font-size: 12px;
-      } */
     }
   }
-}
-
-.leftEllipse {
-  position: absolute;
-  left: 0;
-  top: -230px;
-  z-index: -1;
-}
-
-.ellipse {
-  position: absolute;
-  right: 0;
-  top: 135px;
-  z-index: -1;
-}
-
-.lineIcon {
-  position: absolute;
-  left: 70px;
-  top: 0px;
-  z-index: -1;
-  transform: scale(1.1);
-/* 
-  @include _769 {
-    left: 201px;
-    top: 468px;
-    transform: scale(1.1) rotate(45deg);
-  } */
 }

@@ -2,15 +2,15 @@ import { createContext, useContext } from 'react'
 import { configure, makeObservable, observable } from 'mobx'
 import remotedev from 'mobx-remotedev'
 
-import { UserStore } from './Users'
+import { ThemeStore } from './Theme'
 
 configure({ enforceActions: 'observed' })
 @remotedev({ global: true })
 export class RootStore {
-  @observable usersStore: UserStore
+  @observable themeStore: ThemeStore
 
   constructor() {
-    this.usersStore = new UserStore(this)
+    this.themeStore = new ThemeStore(this)
 
     makeObservable(this)
   }

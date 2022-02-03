@@ -8,7 +8,7 @@
   border-radius: 65px;
   transition: all 0.5s ease;
   position: relative;
-  
+
 
   &::after {
     content: "";
@@ -17,24 +17,39 @@
     border-radius: 65px;
     @include width-height(50%, $height: 52px);
     @include position-absolute($top: -2px, $left: -1px);
-    background: #fff;
-    transition-duration: 300ms;
+    background:#F1F1F1;
+    transition-duration: 400ms;
+  }
+
+  .light,
+  .dark {
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    position: relative;
+    transition-duration: 400ms;
+  }
+
+  .light {
+    color: rgb(0, 0, 0);
+  }
+
+  .dark {
+    color: rgb(255, 255, 255);
+  }
+
+}
+
+.switchOn {
+  border: 3px solid #151515;
+  &::after {
+    background: #151515;
+    @include position-absolute($top: -2px, $left: 123px);
   }
 }
 
-.light,
-.dark {
-  z-index: 1;
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-
-  font-size: 16px;
-  font-weight: bold;
-  color: #000;
-  position: relative;
-}
-
-.dark {
-  color: rgb(255, 255, 255);
-}

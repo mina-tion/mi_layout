@@ -10,18 +10,11 @@
     @include position-absolute($right:0, $bottom: -151px);
     @include z-index-background;
   }
+
   .gradient {
     @include position-absolute($top: 600px, $right: 0);
     @include z-index-background;
   }
-  /* 
-  @include _769 {
-    height: inherit;
-  }
-
-  @include _620 {
-    margin-bottom: 0 !important;
-  } */
 
   .background {
     object-fit: cover;
@@ -34,47 +27,17 @@
     @include flex;
     @include flex-direction(column);
     overflow: hidden;
-    /* height: 100%; */
-    /* @include _769 {
-      padding: 40px 0;
-    } */
 
     .title {
       @include title-style($colorR: #f1f1f1);
       margin: 110px 0 40px 0;
-
-      /*       @include _769 {
-        font-size: 30px;
-      }
-
-      @include _620 {
-        font-size: 25px;
-        margin-top: 220px;
-      } */
     }
 
     .text {
       @include text-style(14px, 400, 21px, $color: #f1f1f1, $letter-spacing: -0.01em);
-
-      /*       max-width: 285px;
- */
       margin: 0;
-      /* 
-      @include _620 {
-        font-size: 12px;
-      } */
     }
   }
-}
-
-.line {
-  position: absolute;
-  right: 0;
-  z-index: -1;
-  /* 
-  @include _620 {
-    display: none;
-  } */
 }
 
 .orange {

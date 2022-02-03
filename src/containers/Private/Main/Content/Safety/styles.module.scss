@@ -7,15 +7,108 @@
   @include container-paddings;
   position: relative;
 
-  .gradient { 
+  .list {
+    @include flex;
+    margin-bottom: 30px;
+    position: relative;
+    @include z-index-components;
+    padding: 0;
+
+    .listItem {
+
+      list-style: none;
+      width: 260px;
+      margin-right: 40px;
+      cursor: pointer;
+    
+      &:nth-child(odd) {
+        .itemTitle {
+          width: 70%;
+        }
+      }
+
+      &:last-child {
+        .text {
+          &::after {
+            display: none;
+        
+          }
+        }
+      }
+    
+      &:hover {
+        .line {
+          background: #ff4c0d;
+        }
+
+        .text,
+        .itemTitle {
+          opacity: 1;
+        }
+
+        .text {
+          &::after {
+            
+            opacity: 0.15;
+          }
+
+          &::before {
+            background: #ff4c0d;
+            opacity: 1;
+          }
+        }
+      }
+
+      .itemTitle {
+        height: 48px;
+        display: block;
+        width: 100%;
+        @include text-style(20px, 600, $color: var(--textColor));
+        opacity: 0.4;
+        transition: all 0.5s ease;
+        margin-bottom: 15px;
+
+      }
+
+      .text {
+        width: 260px;
+        color: var(--textColor);
+        opacity: 0.4;
+        transition: all 0.5s ease;
+        position: relative;
+        &::after {
+          @include position-absolute($right:-40px, $top: -15px);
+          content: '';
+          display: block;
+          @include width-height(40px, 3px);
+          background: var(--textColor);
+          opacity: 0.4;
+          transition: all 0.5s ease;
+          margin: 15px 0 15px 0;
+        }
+        &::before {
+          content: '';
+          display: block;
+          @include width-height(100%, 3px);
+          background: var(--textColor);
+          opacity: 0.4;
+          transition: all 0.5s ease;
+          margin: 15px 0 15px 0;
+        }
+      }
+    }
+
+  }
+
+  .gradient {
     @include position-absolute($bottom: -300px, $left: 0);
-  
+
   }
 
   .title {
     @include title-style;
     margin-bottom: 60px;
-    
+
     @include desktop {
       display: block;
       max-width: 80%;
@@ -24,38 +117,26 @@
 
   .imagesContainer {
     @include flex(flex-start, space-between);
-    @include wideDesktop { 
+
+    @include wideDesktop {
       @include flex(flex-start, center);
     }
 
-
-   max-width: 100%; 
-
-    /*     @include _769 {
-      display: none;
-    } */
+    max-width: 100%;
 
     .bigImg {
       position: relative;
       z-index: 10;
 
-      @include wideDesktop { 
+      @include wideDesktop {
         margin-right: 40px;
       }
-      /*       @include _769 {
-        max-width: 100%;
-      } */
+
     }
 
     .smallImg {
       position: relative;
-      z-index: 1;
-      /*      height: 300px; */
-      // margin-left: 40px;
-      /*  @include _769 {
-        max-width: 100%;
-        margin-left: 0;
-      } */
+      z-index: 1
     }
   }
 }

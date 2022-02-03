@@ -16,7 +16,8 @@
   @include z-index-background;
   opacity: 1;
 }
-.gradient2 {  
+
+.gradient2 {
   z-index: 1;
   @include position-absolute($top: -150px, $right: 0);
   @include z-index-background;

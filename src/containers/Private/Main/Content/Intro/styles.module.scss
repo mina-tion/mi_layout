@@ -6,8 +6,9 @@
 
   .bikeImg {
     @include position-absolute($top: 0, $right: 0);
-    @include wideDesktop { 
-      @include flex(flex-start,  space-around);
+
+    @include wideDesktop {
+      @include flex(flex-start, space-around);
     }
   }
 
@@ -18,12 +19,12 @@
 
     .introTitle {
       @include width-height(1020px, fit-content);
-      @include text-style(80px, 600, 100%, $color: #f1f1f1);
+      @include text-style(80px, 600, 100%, $color: var(--introTitle));
     }
 
     .introText {
       @include width-height(480px, fit-content);
-      @include text-style(30px, 600, 120%, $color: #FF4C0D);
+      @include text-style(30px, 600, 120%, $color: var(--introText));
       margin-bottom: 60px;
     }
   }

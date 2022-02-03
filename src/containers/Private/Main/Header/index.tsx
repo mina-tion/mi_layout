@@ -1,5 +1,8 @@
 import React from 'react'
 
+import { useStore } from 'stores'
+import { useObserver } from 'mobx-react'
+
 import NavigationBar from './NavigationBar'
 import Button from 'components/Button'
 import Logo from 'components/Logo'
@@ -10,18 +13,21 @@ import gradient2 from 'sources/images/gradients/header2.png'
 // style
 import styles from './styles.module.scss'
 
+
 const Header: React.FC = () => {
-  return (
+  const { themeStore } = useStore()
+
+  return useObserver(() => (
     <header className={styles.header}>
       <div className={styles.headerBlock}>
-        <Logo isOrange={false} />
+        <Logo isOrange={!themeStore.darkTheme} />
         <NavigationBar />
       </div>
       <Button text="Купить" />
       <img src={gradient} className={styles.gradient} alt="gradient" />
       <img src={gradient2} className={styles.gradient2} alt="gradient" />
     </header>
-  )
+  ))
 }
 
 export default Header

@@ -23,9 +23,8 @@ const Banner: FC<Props> = ({ imgUrl, title, text, isOrange }) => {
         <h2 className={cn(styles.title, { [styles.orange]: isOrange })}>{title}</h2>
         <p className={cn(styles.text, { [styles.black]: isOrange })}>{text}</p>
       </div>
-      <img src={thread} className={styles.bottomLine} alt="thread" /> 
+      <img src={thread} className={styles.bottomLine} alt="thread" />
       <img src={gradient} className={styles.gradient} alt="gradient" />
-
     </section>
   )
 }

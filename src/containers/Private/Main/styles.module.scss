@@ -7,17 +7,8 @@
   @include flex-direction(column);
   box-sizing: content-box;
   width: 100%;
+  background-color: var(--pageBackground);
 
-/*   @include wideDesktop {
-/*     max-width: 100%;
-
- */ 
-/*     width: 100%; }
-
-  @include desktop {
-    max-width: 100%;
-    width: 100%;
-  }  */
   @include laptop {
     max-width: 992px;
   }
@@ -25,10 +16,9 @@
   .container {
     margin: 0 auto;
     position: relative;
-    background-color: #222222;
+    background-color: var(--pageBackground);
     overflow: hidden;
     max-width: 1440px;
-
 
     @include wideDesktop {
       max-width: 1920px;
