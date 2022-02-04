@@ -1,6 +1,9 @@
 @import 'sources/styles/mixins.scss';
 
 .navbar {
+  @include laptop { 
+    display: none;
+  }
   @include z-index-components;
 
   .item {

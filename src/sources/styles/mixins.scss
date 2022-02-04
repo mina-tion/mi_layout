@@ -47,6 +47,16 @@ $desktop2KLgDOWN: (max-width: 2560px,
 @mixin container-paddings { 
   padding-left: 140px;
   padding-right: 140px;
+
+  @include laptop { 
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @include phones { 
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 @mixin adaptive-value($property, $startSize, $minSize, $type) {
@@ -145,13 +155,19 @@ $desktop2KLgDOWN: (max-width: 2560px,
 }
 
 @mixin laptop {
-  @media screen and (max-width: 957px) {
+  @media screen and (max-width: 960px) {
     @content;
   }
 }
 
 @mixin tablets {
   @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mini-tablets {
+  @media screen and (max-width: 620px) {
     @content;
   }
 }

@@ -25,6 +25,7 @@ const Battery: React.FC = () => {
           <li key={item.id} className={styles.listItem}>
             <h4 className={styles.itemTitle}>{item.title}</h4>
             <p className={styles.text}>{item.text}</p>
+            <img src={item.imgUrl} alt='item pic' className={styles.img}/>
           </li>
         ))}
       </ul>

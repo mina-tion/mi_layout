@@ -9,7 +9,7 @@
 
 
   .thread {
-    @include position-absolute($top: 500px, $left: 0);
+    @include position-absolute($top: 510px, $left: 0);
     @include z-index-background;
   }
 

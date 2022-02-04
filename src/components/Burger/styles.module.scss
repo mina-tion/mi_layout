@@ -1,0 +1,13 @@
+@import 'sources/styles/mixins.scss';
+
+.icon {
+
+  @include z-index-components;
+  display: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  
+  @include laptop {
+    display: block;
+  }
+}

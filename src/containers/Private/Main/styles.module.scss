@@ -6,28 +6,48 @@
   @include flex;
   @include flex-direction(column);
   box-sizing: content-box;
-  width: 100%;
+  /* width: 100%; */
   background-color: var(--pageBackground);
 
-  @include laptop {
-    max-width: 992px;
+/*  @include laptop {
+    max-width: 957px;
   }
+
+  @include tablets { 
+    max-width: 768px;
+  }
+
+  @include phones { 
+    max-width: 480px;
+  }  */
 
   .container {
     margin: 0 auto;
     position: relative;
     background-color: var(--pageBackground);
     overflow: hidden;
+    width: 100%;
     max-width: 1440px;
-
+    
     @include wideDesktop {
       max-width: 1920px;
-      @include adaptive-value('max-width', 1920px, 1440px, 1);
     }
-
     @include desktop {
       max-width: 1440px;
+      min-width: calc(320px + (1440 - 320) * ((100vw - 320px) / (1440 - 320)));
     }
+
+/*     @include laptop { 
+      width: 957px;
+    }
+
+    @include tablets { 
+      width: 768px;
+    }
+
+    @include phones { 
+      max-width: 480px;
+    } */
 
     .page {
       flex: 1 1 auto;

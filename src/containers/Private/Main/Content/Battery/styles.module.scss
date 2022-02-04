@@ -6,6 +6,14 @@
   padding: 250px 0 120px 0;
   @include container-paddings;
 
+  @include laptop { 
+    padding-top: 150px;
+  }
+
+  @include mini-tablets { 
+    padding-top: 60px;
+  }
+
   .list {
     @include flex;
     margin-bottom: 30px;
@@ -13,12 +21,36 @@
     @include z-index-components;
     padding: 0;
 
+    @include laptop { 
+      flex-direction: column;
+    }
+
     .listItem {
       list-style: none;
       width: 360px;
       margin-right: 40px;
       cursor: pointer;
+
+      @include laptop {
+        display: block;
+        width: 90%;
+      }
+
+      @include tablets {
+        display: block;
+        width: 100%;
+      }
     
+      .img { 
+        display: none;
+        margin-bottom: 40px;
+        @include laptop {
+          display: block;
+          width: 100%;
+        }
+      }
+
+
       &:hover {
         .line {
           background: #ff4c0d;
@@ -53,6 +85,8 @@
         transition: all 0.5s ease;
         margin-bottom: 15px;
         position: relative;
+        
+
         &::after {
           content: '';
           display: block;
@@ -88,6 +122,12 @@
     @include position-absolute($bottom: 0, $left: 0);
     @include z-index-background;
     opacity: 0.5;
+
+    @include laptop { 
+      @include position-absolute($top: -150px, $left: -127px);
+      opacity: 0.8;
+      height: 1000px;
+    }
   }
 
   .gradient2 {
@@ -109,6 +149,20 @@
     @include title-style($colorR: var(--textColor));
     margin-bottom: 60px;
     width: 80%;
+    @include laptop { 
+      width: 560px;
+      margin-bottom: 40px;
+      @include text-style(30px, 600, 33px, $color: var(--textColor));
+    }
+  
+    @include mini-tablets { 
+      margin-bottom: 30px;
+      width: 460px;
+    }  
+
+    @include phones { 
+      width: 300px;
+    }  
 
   }
 
