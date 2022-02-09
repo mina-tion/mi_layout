@@ -7,10 +7,19 @@
   position: relative;
   @include container-paddings;
 
+  @include laptop {
+    @include flex();
+    @include flex-direction(column);
+    margin-bottom: 80px;
+  }
 
   .thread {
     @include position-absolute($top: 510px, $left: 0);
     @include z-index-background;
+
+    @include laptop { 
+      display: none;
+    }
   }
 
   .gradient {
@@ -23,22 +32,48 @@
     min-width: 50%;
 
     .text:nth-child(2) {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+
+      @include laptop {
+        max-width: 500px;
+      }
+
+      @include tablets {
+        max-width: 400px;
+      }
     }
 
     .text:nth-child(3) {
-      margin-bottom: 60px;
+      margin-bottom: 30px;
+
+      @include laptop {
+        max-width: 550px;
+      }
+
+      @include tablets {
+        max-width: 440px;
+      }
     }
 
     .title {
       @include title-style;
       margin: 0 0 40px 0;
       max-width: 415px;
+
+      @include laptop {
+        color: #FF4C0D;
+        margin-bottom: 15px;
+      }
     }
 
     .text {
       @include text-style(14px, 400, 21px, $color: var(--textColor));
       max-width: 312px;
+
+      @include laptop {
+        max-width: 440px;
+      }
+
       margin: 0;
     }
   }

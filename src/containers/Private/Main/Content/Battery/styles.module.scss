@@ -1,29 +1,62 @@
 @import 'sources/styles/mixins.scss';
-
 .description {
 
   position: relative;
   padding: 250px 0 120px 0;
   @include container-paddings;
 
-  @include laptop { 
+  @include laptop {
     padding-top: 150px;
+    padding-bottom: 80px;
   }
 
-  @include mini-tablets { 
+  @include mini-tablets {
     padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .title {
+    @include z-index-components;
+    position: relative;
+    @include title-style($colorR: var(--textColor));
+    margin-bottom: 60px;
+    width: 80%;
+
+    @include laptop {
+      width: 780px;
+      margin-bottom: 40px;
+      @include text-style(30px, 600, 33px, $color: var(--textColor));
+    }
+
+    @include tablets {
+      width: 580px;
+      margin-bottom: 40px;
+      @include text-style(30px, 600, 33px, $color: var(--textColor));
+    }
+
+    @include mini-tablets {
+      margin-bottom: 30px;
+      width: 460px;
+    }
+
+    @include phones {
+      width: 300px;
+    }
+
   }
 
   .list {
     @include flex;
+
     margin-bottom: 30px;
     position: relative;
     @include z-index-components;
     padding: 0;
 
-    @include laptop { 
-      flex-direction: column;
+    @include laptop {
+      @include flex-direction(column);
     }
+    
 
     .listItem {
       list-style: none;
@@ -31,44 +64,46 @@
       margin-right: 40px;
       cursor: pointer;
 
-      @include laptop {
-        display: block;
-        width: 90%;
+      @include wideDesktop{
+        width: 33%;
       }
+  
 
-      @include tablets {
-        display: block;
+      @include laptop {
         width: 100%;
       }
-    
-      .img { 
+
+      .img {
         display: none;
         margin-bottom: 40px;
+
         @include laptop {
           display: block;
           width: 100%;
         }
       }
 
-
       &:hover {
         .line {
           background: #ff4c0d;
         }
+
         .text,
         .itemTitle {
           opacity: 1;
         }
+
         .itemTitle {
           &::after {
             background: #ff4c0d;
             opacity: 1;
           }
+
           &::before {
             opacity: 0.15;
           }
         }
-    
+
       }
 
       &:last-child {
@@ -77,17 +112,27 @@
             display: none;
           }
         }
+
+        .img { 
+          margin-bottom: 0px;
+        }
       }
-    
+
       .itemTitle {
         @include text-style(20px, 600, $color: var(--textColor));
         opacity: 0.4;
         transition: all 0.5s ease;
         margin-bottom: 15px;
         position: relative;
-        
+
+
+        @include laptop {
+          opacity: 1;
+          color: #ff4c0d;
+        }
 
         &::after {
+
           content: '';
           display: block;
           @include width-height(100%, 3px);
@@ -95,9 +140,23 @@
           opacity: 0.4;
           transition: all 0.5s ease;
           margin: 15px 0 15px 0;
+
+          @include laptop {
+            opacity: 1;
+            background: #ff4c0d;
+            width: 200px;
+          }
+
+          @include tablets {
+            width: 150px;
+          }
+
+          @include phones {
+            width: 100px;
+          }
         }
-    
-        &::before { 
+
+        &::before {
           @include position-absolute($right:-40px, $bottom: -15px);
           content: '';
           display: block;
@@ -106,64 +165,60 @@
           opacity: 0.4;
           transition: all 0.5s ease;
           margin: 15px 0 15px 0;
+
+          @include laptop {
+            display: none;
+          }
+        }
       }
-      }
-    
+
       .text {
+        width: 100%;
         color: var(--textColor);
         opacity: 0.4;
         transition: all 0.5s ease;
+
+        @include laptop {
+          opacity: 1;
+        }
       }
     }
-    
+
   }
+
+  .thread {
+    @include position-absolute($right:0, $bottom: 0);
+    @include z-index-background;
+  }
+
 
   .gradient {
     @include position-absolute($bottom: 0, $left: 0);
     @include z-index-background;
-    opacity: 0.5;
+    opacity: 0.8;
 
-    @include laptop { 
-      @include position-absolute($top: -150px, $left: -127px);
-      opacity: 0.8;
-      height: 1000px;
+    @include laptop {
+      @include position-absolute($top: -355px, $left: -240px);
+      opacity: 1;
+      height: 1500px;
+    }
+
+    @include mini-tablets {
+      @include position-absolute($top: -355px, $left: -127px);
+      height: 1300px;
     }
   }
 
   .gradient2 {
     @include position-absolute($bottom: 0, $right: 0);
     @include z-index-background;
-    opacity: 0.5;
+    opacity: 0.8;
   }
 
   .gradient3 {
     @include position-absolute($bottom: 0, $right: 0);
     @include z-index-background;
-    opacity: 0.5;
-  }
-
-
-  .title {
-    @include z-index-components;
-    position: relative;
-    @include title-style($colorR: var(--textColor));
-    margin-bottom: 60px;
-    width: 80%;
-    @include laptop { 
-      width: 560px;
-      margin-bottom: 40px;
-      @include text-style(30px, 600, 33px, $color: var(--textColor));
-    }
-  
-    @include mini-tablets { 
-      margin-bottom: 30px;
-      width: 460px;
-    }  
-
-    @include phones { 
-      width: 300px;
-    }  
-
+    opacity: 0.8;
   }
 
   .imagesContainer {
@@ -172,6 +227,10 @@
 
     @include wideDesktop {
       @include flex(flex-start, center);
+    }
+
+    @include laptop {
+      display: none;
     }
   }
 
@@ -183,9 +242,4 @@
     z-index: 1;
     position: relative;
   }
-}
-
-.thread {
-  @include position-absolute($right:0, $bottom: 0);
-  @include z-index-background;
 }

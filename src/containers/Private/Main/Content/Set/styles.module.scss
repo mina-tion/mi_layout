@@ -2,9 +2,8 @@
 
 .set {
   background: var(--cardBackground);
-  max-width: 1160px;
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 0 140px;
   @include flex(flex-start, space-between);
   padding: 60px 80px;
   border-radius: 15px;
@@ -12,10 +11,18 @@
   position: relative;
   @include z-index-components;
   transition: all 0.5s ease;
+  @include laptop { 
+    @include flex-direction(column);
+    margin: 0 40px;
+    height: 420px;
+    padding: 40px;
+  }
 
   .gradient {
     @include position-absolute($top: 0, $right: 0);
     border-radius: 15px;
+    @include width-height(100%, 100%);
+
   }
 
   .description {
@@ -27,10 +34,17 @@
       @include title-style($colorR: var(--textColor));
       max-width: 500px;
       margin-bottom: 10px;
+
+      @include laptop {
+        @include text-style(30px, 600, 33px, $color: var(--textColor))
+      }
     }
 
     .price {
       @include text-style(30px, 600, 36px, $color: #ff4c0d);
+      @include laptop {
+        @include text-style(25px, 600, 26px,  $color: #ff4c0d)
+      }
     }
   }
 
@@ -38,13 +52,23 @@
     @include flex(flex-start);
     @include flex-direction(column);
     margin-top: 4px;
+    @include laptop { 
+      margin-top: 10px;
+    }
 
     .setTitle {
       @include text-style(20px, 600, $color: var(--textColor));
       margin-bottom: 25px;
+      @include laptop { 
+        margin-bottom: 0px;
+      }
+      
     }
 
     .setList {
+      @include laptop { 
+        display: none;
+      }
       list-style: none;
       padding-left: 0;
       @include text-style(14px, $color: var(--textColor));
@@ -59,4 +83,8 @@
 .bike {
   @include position-absolute($left: 370px, $top: -100px);
   z-index: 5;
+  @include laptop {
+    @include position-absolute($left: 169px, $top: -64px);
+    height: 500px;
+  }
 }

@@ -1,6 +1,5 @@
 @import 'sources/styles/mixins.scss';
 
-
 .mobileApp {
   @include container-paddings;
   @include flex;
@@ -10,6 +9,9 @@
   .thread {
     @include position-absolute($bottom: 383px, $right: 0);
     z-index: 5;
+    @include laptop { 
+      display: none;
+    }
   }
 
   .gradient {
@@ -28,6 +30,14 @@
       margin-right: 300px;
     }
 
+    @include laptop {
+      margin-right: 100px;
+    }
+
+    @include tablets {
+      margin-right: 35px;
+    }
+
     @include z-index-components;
 
     .icon {
@@ -36,6 +46,12 @@
 
         @include wideDesktop {
           margin-right: 50px;
+        }
+      }
+
+      &:last-child {
+        @include laptop {
+          display: none;
         }
       }
 
@@ -49,16 +65,36 @@
       max-width: 514px;
       margin: 110px 0 40px 0;
 
+      @include laptop {
+        margin: 10px 0 20px 0;
+        color: #FF4C0D;
+      }
+
+      @include tablets {
+        margin-right: 80px;
+        width: 100%;
+        ;
+      }
+
       @include wideDesktop {
         max-width: 100%;
       }
+
+  
     }
 
     .text {
       width: 320px;
+      margin-bottom: 60px;
+
+      @include tablets {
+        width: 270px;
+        margin-bottom: 40px;
+      }
+
       font-weight: normal;
       color: var(--textColor);
-      margin-bottom: 60px;
+
       letter-spacing: -0.01em;
 
       @include wideDesktop {

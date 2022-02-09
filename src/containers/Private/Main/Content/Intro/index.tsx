@@ -32,7 +32,6 @@ const Intro: FC = observer(() => {
   else bikeSrc = blackBike
 
 
-
   return (
     <section className={styles.intro}>
       <img src={bikeSrc} alt="bike" className={styles.bikeImg} />

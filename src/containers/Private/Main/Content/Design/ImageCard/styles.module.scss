@@ -3,9 +3,17 @@
 .card {
 
   @include width-height(560px, 550px);
+
   background: #151515;
   border-radius: 15px;
   position: relative;
+
+  
+  @include mini-tablets {
+    @include flex-direction(column);
+    @include flex(center, space-between);
+    height: 1120px;
+  }
 
   &:first-child {
     margin-right: 10px;
@@ -31,6 +39,10 @@
     .title {
       @include text-style(20px, 600, $color: #F1F1F1);
       margin: 0 0 20px 0;
+    }
+
+    .text { 
+      width:  420px;
     }
   }
 }

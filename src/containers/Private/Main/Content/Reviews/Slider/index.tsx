@@ -18,13 +18,13 @@ const settings = {
   prevArrow: <PrevArrow />, 
   focusOnSelect: true,
   draggable: true,
-  slidesToShow: 2,
+  slidesToShow: 1,
   slidesToScroll: 1,
   speed: 500,
 
    responsive: [
     {
-      breakpoint: 820,
+      breakpoint: 620,
       settings: {
         slidesToShow: 1,
         dots: true,

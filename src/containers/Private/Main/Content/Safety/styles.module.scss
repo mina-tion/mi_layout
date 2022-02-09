@@ -6,6 +6,24 @@
   margin-bottom: 120px;
   @include container-paddings;
   position: relative;
+  @include laptop { 
+    margin-bottom: 80px;
+  }
+
+  .title {
+    @include title-style;
+    margin-bottom: 60px;
+
+    @include desktop {
+      display: block;
+      max-width: 80%;
+    }
+
+    @include laptop { 
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+  }
 
   .list {
     @include flex;
@@ -20,6 +38,10 @@
       width: 260px;
       margin-right: 40px;
       cursor: pointer;
+
+      @include wideDesktop{
+        width: 25%;
+      }
     
       &:nth-child(odd) {
         .itemTitle {
@@ -72,6 +94,9 @@
 
       .text {
         width: 260px;
+        @include wideDesktop{
+          width: 100%;
+        }
         color: var(--textColor);
         opacity: 0.4;
         transition: all 0.5s ease;
@@ -103,16 +128,6 @@
   .gradient {
     @include position-absolute($bottom: -300px, $left: 0);
 
-  }
-
-  .title {
-    @include title-style;
-    margin-bottom: 60px;
-
-    @include desktop {
-      display: block;
-      max-width: 80%;
-    }
   }
 
   .imagesContainer {

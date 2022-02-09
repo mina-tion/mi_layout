@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 import { useStore } from 'stores'
 
 import darkPhone from 'sources/images/dark-mobile.png'
 import lightPhone from 'sources/images/light-mobile.png'
+import phone from 'sources/images/mobile.png'
 import appStore from 'sources/images/icons/appStore.png'
 import playMarket from 'sources/images/icons/playMarket.png'
 import appStoreDark from 'sources/images/icons/appStoreDark.png'
@@ -17,6 +18,24 @@ import { useObserver } from 'mobx-react'
 
 const Mobile: React.FC = () => {
   const { themeStore } = useStore()
+  const [width, setWidth] = useState(document.documentElement.clientWidth)
+
+  const onResize = () => {
+    setWidth(document.documentElement.clientWidth)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', onResize)
+    return () => {
+      window.removeEventListener('resize', onResize)
+    }
+  }, [])
+
+  let phoneSrc = phone
+  if (width <= 960) {
+    phoneSrc = phone
+  } else if (themeStore.darkTheme) phoneSrc = darkPhone
+  else phoneSrc = lightPhone
 
   return useObserver(() => (
     <section className={styles.mobileApp}>
@@ -30,7 +49,7 @@ const Mobile: React.FC = () => {
 
         <div className={styles.iconsContainer}>
           <img
-            src={themeStore.darkTheme ? appStore : appStoreDark}
+            src={!themeStore.darkTheme || width <= 960 ? appStoreDark : appStore}
             alt="app store"
             className={styles.icon}
           />
@@ -43,10 +62,11 @@ const Mobile: React.FC = () => {
       </div>
 
       <img
-        src={themeStore.darkTheme ? darkPhone : lightPhone}
+        src={phoneSrc}
         alt="mobile phone"
         className={styles.phone}
       />
+
       <img src={gradient} className={styles.gradient} alt="gradient" />
       <img src={thread} className={styles.thread} alt="line" />
       <img src={gradient2} className={styles.gradient2} alt="gradient" />

@@ -86,7 +86,11 @@ $desktop2KLgDOWN: (max-width: 2560px,
 }
 
 @mixin title-style($colorR: #FF4C0D) {
-  @include text-style(45px, 500, 49.5px, $color: $colorR)
+  @include text-style(45px, 500, 49.5px, $color: $colorR);
+
+  @include laptop { 
+    @include text-style(30px, 600, 33px, $color: var(--textColor));
+  }
 }
 
 

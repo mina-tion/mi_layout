@@ -1,10 +1,22 @@
 @import 'sources/styles/mixins.scss';
-
 .banner {
   @include width-height(100%, 600px);
   position: relative;
   @include z-index-components;
   margin-bottom: 120px;
+
+  @include laptop {
+    height: 530px;
+    margin-bottom: 80px;
+  }
+
+  @include tablets {
+    height: 420px;
+  }
+
+  @include mini-tablets {
+    margin-bottom: 80px;
+  }
 
   .bottomLine {
     @include position-absolute($right:0, $bottom: -151px);
@@ -14,11 +26,21 @@
   .gradient {
     @include position-absolute($top: 600px, $right: 0);
     @include z-index-background;
+
+    @include laptop { 
+      display:  none;
+    }
   }
 
   .background {
+    object-position: 80%;
     object-fit: cover;
     @include width-height(100%, 100%);
+
+    @include phones {
+      object-position: center;
+    }
+
   }
 
   .content {
@@ -28,9 +50,28 @@
     @include flex-direction(column);
     overflow: hidden;
 
+    @include laptop {
+      height: 530px;
+      @include position-absolute($top: 40px, $left: 40px);
+
+    }
+
+    @include tablets {
+      height: 420px;
+    }
+
     .title {
       @include title-style($colorR: #f1f1f1);
       margin: 110px 0 40px 0;
+
+      @include laptop {
+        margin: 240px 0 20px 0;
+      }
+
+      @include tablets {
+        margin: 140px 0 20px 0;
+      }
+
     }
 
     .text {

@@ -6,6 +6,10 @@
   @include z-index-components;
   position: relative;
 
+  @include laptop { 
+    margin-bottom: 80px;
+  }
+
   .title {
     @include title-style($colorR: var(--introText));
     margin-bottom: 60px;
@@ -13,6 +17,9 @@
 
     @include wideDesktop {
       width: 100%;
+    }
+    @include laptop {
+      margin-bottom: 30px;
     }
   }
 
@@ -28,6 +35,10 @@
   .gradient {
     @include position-absolute($bottom: -450px, $left: 0);
     z-index: -1;
+
+    @include laptop { 
+      display: none;
+    }
   }
 
   .imageCardContainer {
@@ -37,6 +48,12 @@
 
     @include wideDesktop {
       @include flex(flex-start, space-around);
+    }
+
+    @include laptop {
+      @include flex-direction(column);
+      @include flex(center, space-between);
+      height: 1120px;
     }
   }
   }

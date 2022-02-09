@@ -8,26 +8,44 @@
   margin: 0;
   @include z-index-components;
 
+  @include laptop {
+    margin-top: 80px;
+  }
+
+
   li {
-    margin-bottom: 40px;
+    &:not(:last-child) { 
+      margin-bottom: 40px;
+    }
+    
 
     .question {
       @include text-style(20px, 600, $color: var(--textColor));
-      margin: 0 0 12px 0;
+      margin: 0 0 15px 0;
 
       &::after {
         margin-top: 15px;
         content: '';
         display: block;
-        width: 100px;
-        height: 3px;
-        background: #ff4c0d;
+        @include width-height(100px, 3px);
+        background: #FF4C0D;
+
+        @include laptop {
+          width: 150px;
+        }
       }
     }
 
     .answer {
       @include text-style(14px, normal, 21px, $color: var(--textColor));
       margin-top: 15px;
+
+      @include laptop { 
+        max-width: 600px;
+      }
+      @include tablets { 
+        max-width: 487px;
+      }
     }
   }
 }

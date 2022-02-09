@@ -32,7 +32,7 @@
   z-index: 1;
   @include position-absolute($top: -150px, $right: 0);
   @include z-index-background;
-  opacity: 0.7;
+  opacity: 0.9;
   @include laptop { 
     height: calc(500px + (800 - 500) * ((100vw - 640px) / (960 - 640)));
   }
