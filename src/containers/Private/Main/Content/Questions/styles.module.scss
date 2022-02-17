@@ -3,7 +3,7 @@
 .questions {
   @include flex(flex-start, space-between);
   margin-bottom: 120px;
-  overflow-x: clip;
+
   position: relative;
   @include container-paddings;
 
@@ -42,9 +42,13 @@
     @include z-index-background;
 
     @include laptop {
-      position: static;
-      @include position-absolute($top: 0px, $right: -300px);
+      @include position-absolute($top: -280px, $left: 0px);
+      
     }
+    @include tablets {
+      @include position-absolute($top: 200px, $left: 0px);
+    }
+
   }
 
   .description {
