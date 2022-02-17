@@ -9,6 +9,10 @@
   text-align: center;
   @include width-height(fit-content, 54px);
 
+  @include phones { 
+    @include width-height(100%, 54px);
+  }
+
   .text {
     @include text-style(16px, 700, 24px, $color: #151515);
   }
@@ -28,7 +32,9 @@
 .orange {
   background: #FF4C0D;
   color: #F1F1F1;
-
+  @include phones { 
+    @include width-height(100%, 54px);
+  }
   .text {
     color: #F1F1F1;
   }

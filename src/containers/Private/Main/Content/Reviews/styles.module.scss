@@ -5,23 +5,36 @@
   margin-bottom: 120px;
   @include container-paddings;
   padding-right: 0;
+  position: relative;
   @include z-index-components;
+  z-index: 50;
 
-  @include laptop{
+  @include laptop {
     padding-right: 0;
     margin-bottom: 80px;
+  }
+
+  @include mini-tablets {
+    padding-right: 20px;
+
   }
 
   .title {
     @include title-style($colorR: #ff4c0d);
     margin: 0 0 40px 0;
+    z-index: 55;
   }
 
   .controls {
+    @include mini-tablets {
+      margin-top: 30px;
+    }
+
     @include flex(flex-start, space-between);
 
     button {
       max-width: 190px;
+      margin-top: 30px;
     }
   }
 }

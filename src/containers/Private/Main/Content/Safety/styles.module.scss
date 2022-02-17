@@ -6,31 +6,38 @@
   margin-bottom: 120px;
   @include container-paddings;
   position: relative;
-  @include laptop { 
+
+  @include laptop {
     margin-bottom: 80px;
   }
 
   .title {
     @include title-style;
-    margin-bottom: 60px;
-
+    margin-bottom: 60px; 
+    position: relative;
+    z-index: 15;
     @include desktop {
       display: block;
       max-width: 80%;
     }
 
-    @include laptop { 
-      max-width: 100%;
+    @include laptop {
+      max-width: 100%; 
       margin-bottom: 30px;
     }
   }
 
   .list {
+    
     @include flex;
     margin-bottom: 30px;
     position: relative;
     @include z-index-components;
     padding: 0;
+    z-index: 15;
+    @include laptop {
+      @include flex-direction(column);
+    }
 
     .listItem {
 
@@ -39,25 +46,47 @@
       margin-right: 40px;
       cursor: pointer;
 
-      @include wideDesktop{
+      @include wideDesktop {
         width: 25%;
       }
-    
-      &:nth-child(odd) {
-        .itemTitle {
-          width: 70%;
+
+      @include laptop {
+        width: 100%;
+      }
+
+      .img {
+        display: none;
+        margin-bottom: 40px;
+        
+        @include laptop {
+          display: block;
+          width: 100%;
         }
       }
 
+      &:nth-child(odd) {
+        .itemTitle {
+          width: 70%;
+          @include phones  {
+            width: 100%;
+          }
+        }
+      }
+      
+      .itemTitle {
+     
+        @include phones  {
+          width: 100%;
+        }
+      }
       &:last-child {
         .text {
           &::after {
             display: none;
-        
           }
         }
       }
-    
+
       &:hover {
         .line {
           background: #ff4c0d;
@@ -70,7 +99,6 @@
 
         .text {
           &::after {
-            
             opacity: 0.15;
           }
 
@@ -78,6 +106,18 @@
             background: #ff4c0d;
             opacity: 1;
           }
+        }
+      }
+
+      &:last-child {
+        .itemTitle {
+          &::before {
+            display: none;
+          }
+        }
+
+        .img { 
+          margin-bottom: 0px;
         }
       }
 
@@ -90,17 +130,44 @@
         transition: all 0.5s ease;
         margin-bottom: 15px;
 
+        @include laptop {
+          height: 24px;
+          opacity: 1;
+          color: #ff4c0d;
+        }
+
+        @include mini-tablets { 
+          @include text-style(16px, 600, 20px, $color:  #ff4c0d);
+          margin-bottom: 10px;
+        }
       }
 
       .text {
         width: 260px;
-        @include wideDesktop{
+
+        @include laptop {
+          opacity: 1;
+        }
+
+        @include wideDesktop {
           width: 100%;
         }
-        color: var(--textColor);
+
+        @include text-style(14px, normal, 150%, $color: var(--textColor));
+        @include laptop {
+          opacity: 1;
+          @include text-style(14px, normal, 160%, $color: var(--textColor));
+        }
+
+        @include mini-tablets {
+          @include text-style(12px, normal, 170%, $color: var(--textColor));
+        }
+    
+
         opacity: 0.4;
         transition: all 0.5s ease;
         position: relative;
+
         &::after {
           @include position-absolute($right:-40px, $top: -15px);
           content: '';
@@ -110,7 +177,11 @@
           opacity: 0.4;
           transition: all 0.5s ease;
           margin: 15px 0 15px 0;
+          @include laptop {
+            display: none;
+          }
         }
+
         &::before {
           content: '';
           display: block;
@@ -119,15 +190,48 @@
           opacity: 0.4;
           transition: all 0.5s ease;
           margin: 15px 0 15px 0;
+
+          @include laptop {
+            opacity: 1;
+            background: #ff4c0d;
+            width: 200px;
+            margin: 15px 0 15px 0;
+          }
+
+          @include tablets {
+            width: 150px;
+            margin: 10px 0 10px 0;
+          }
+
+          @include phones {
+            width: 100px;
+          }
         }
       }
     }
 
   }
+  .thread { 
+    display: none;
+    z-index: 0;
+
+    @include mini-tablets { 
+      display: block;
+      @include position-absolute($top: -280px, $right: 0);
+    }
+  }
 
   .gradient {
+    z-index: 0;
     @include position-absolute($bottom: -300px, $left: 0);
 
+    @include laptop { 
+      @include position-absolute($top: -500px, $left: -150px);
+    }
+
+    @include mini-tablets { 
+      @include position-absolute($top: -200px, $left: -150px);
+    }
   }
 
   .imagesContainer {
@@ -137,6 +241,9 @@
       @include flex(flex-start, center);
     }
 
+    @include laptop {
+      display: none;
+    }
     max-width: 100%;
 
     .bigImg {

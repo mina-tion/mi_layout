@@ -10,22 +10,20 @@
   @include laptop{
     @include width-height(100%, 198px);
     @include flex-direction(column);
-    @include flex(center, center);
-    .leftContainer {
-      text-align: center;
-    }
-  
-    .rightContainer {
-      text-align: center;
-    }
+    @include flex(center, center); 
   } 
-
 
   .leftContainer {
     text-align: left;
+    @include laptop { 
+      text-align: center;
+    }
   }
 
   .rightContainer {
     text-align: right;
+    @include laptop { 
+      text-align: center;
+    }
   }
 }

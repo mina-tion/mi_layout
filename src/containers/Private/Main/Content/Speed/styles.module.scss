@@ -1,0 +1,26 @@
+@import 'sources/styles/mixins.scss';
+
+.bannerContainer {
+    position: relative;
+    height: fit-content;
+
+    @include laptop {
+        &:after {
+            content: "";
+            display: block;
+            @include width-height(100%, 100%);
+            @include position-absolute($top: 0, $left: 0);
+
+            background: transparent;
+            background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0.4;
+            transform: rotate(180deg);
+            z-index: 10;
+        }
+    }
+
+    .thread { 
+        @include position-absolute($bottom: -400px, $right: 10px); 
+        transform: scale(1.1);
+    }
+}

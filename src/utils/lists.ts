@@ -5,6 +5,11 @@ import battery1 from 'sources/images/battery1.png'
 import battery2 from 'sources/images/battery2.png' 
 import battery3 from 'sources/images/battery3.png' 
 
+import safety1 from 'sources/images/safety-2.png'
+import safety2 from 'sources/images/safety-3.png'
+import safety3 from 'sources/images/safety-4.png'
+import safety4 from 'sources/images/safety-5.png'
+
 export const navItems = [
   { id: 0, link: './', title: 'О продукте' },
   { id: 1, link: './', title: 'Внешний вид' },
@@ -63,21 +68,25 @@ export const securityList = [
     id: 0,
     title: 'Яркие ходовые огни',
     text: `Продуманный угол рассеивания света позволяет сохранять хорошую видимость, не ослепляя других участников движения.`,
+    imgUrl: safety1,
   },
   {
     id: 1,
     title: 'Двойная тормозная система',
     text: `При нажатии наручку тормоза системы переднего и заднего колеса активируются последовательно, сокращая тормозной путь и обеспечивая безопасную и плавную остановку.`,
+    imgUrl: safety2,
   },
   {
     id: 2,
     title: 'Яркая задняя фара',
     text: `При включении ходовых огней задняя фара включается автоматически. При нажатии на ручку тормоза она начинает мигать, предупреждая других участников движения.`,
+    imgUrl: safety3,
   },
   {
     id: 3,
     title: 'Отражатели спереди, сбоку и сзади',
     text: `Улучшенные отражатели, размещенные с четырех сторон, делают вашу поездку в темное время суток безопаснее.`,
+    imgUrl: safety4,
   },
 ]
 

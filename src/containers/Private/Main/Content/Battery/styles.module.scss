@@ -1,4 +1,5 @@
 @import 'sources/styles/mixins.scss';
+
 .description {
 
   position: relative;
@@ -25,13 +26,11 @@
     @include laptop {
       width: 780px;
       margin-bottom: 40px;
-      @include text-style(30px, 600, 33px, $color: var(--textColor));
-    }
+ }
 
     @include tablets {
       width: 580px;
       margin-bottom: 40px;
-      @include text-style(30px, 600, 33px, $color: var(--textColor));
     }
 
     @include mini-tablets {
@@ -42,7 +41,6 @@
     @include phones {
       width: 300px;
     }
-
   }
 
   .list {
@@ -56,7 +54,7 @@
     @include laptop {
       @include flex-direction(column);
     }
-    
+
 
     .listItem {
       list-style: none;
@@ -64,10 +62,9 @@
       margin-right: 40px;
       cursor: pointer;
 
-      @include wideDesktop{
+      @include wideDesktop {
         width: 33%;
       }
-  
 
       @include laptop {
         width: 100%;
@@ -81,6 +78,7 @@
           display: block;
           width: 100%;
         }
+
       }
 
       &:hover {
@@ -106,6 +104,7 @@
 
       }
 
+
       &:last-child {
         .itemTitle {
           &::before {
@@ -113,7 +112,7 @@
           }
         }
 
-        .img { 
+        .img {
           margin-bottom: 0px;
         }
       }
@@ -125,6 +124,11 @@
         margin-bottom: 15px;
         position: relative;
 
+        @include mini-tablets { 
+          @include text-style(16px, 600, 20px, $color:  #ff4c0d);
+          margin-bottom: 10px;
+        }
+
 
         @include laptop {
           opacity: 1;
@@ -132,7 +136,6 @@
         }
 
         &::after {
-
           content: '';
           display: block;
           @include width-height(100%, 3px);
@@ -149,6 +152,9 @@
 
           @include tablets {
             width: 150px;
+          }
+          @include mini-tablets { 
+            margin: 10px 0 10px 0;
           }
 
           @include phones {
@@ -174,23 +180,32 @@
 
       .text {
         width: 100%;
-        color: var(--textColor);
         opacity: 0.4;
         transition: all 0.5s ease;
-
+        @include text-style(14px, normal, 150%, $color: var(--textColor));
         @include laptop {
           opacity: 1;
+          @include text-style(14px, normal, 160%, $color: var(--textColor));
+        }
+
+        @include mini-tablets {
+          @include text-style(12px, normal, 170%, $color: var(--textColor));
         }
       }
     }
-
   }
 
   .thread {
     @include position-absolute($right:0, $bottom: 0);
     @include z-index-background;
-  }
 
+    @include laptop {
+      @include position-absolute($right:0, $bottom: 0);
+    }
+    @include mini-tablets {
+      @include position-absolute($right: -90px, $bottom: 0px);
+    }
+  }
 
   .gradient {
     @include position-absolute($bottom: 0, $left: 0);
@@ -213,6 +228,12 @@
     @include position-absolute($bottom: 0, $right: 0);
     @include z-index-background;
     opacity: 0.8;
+
+    @include laptop {
+      @include position-absolute($bottom: 350px, $right: 0px);
+      opacity: 1;
+      height: 1000px;
+    }
   }
 
   .gradient3 {

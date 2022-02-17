@@ -3,9 +3,14 @@
 .slider {
 
   @include flex(baseline, space-between);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   margin-bottom: 24px;
   position: relative;
   max-width: 100%;
+  margin-bottom: 24px;
+  position: relative;
   @include z-index-components;
 
   .slide {
@@ -17,12 +22,26 @@
     min-height: 290px;
     margin-right: 40px;
 
+    @include mini-tablets {
+      max-width: 100%;
+      margin-bottom: 50px;
+      height: 322px;
+    }
+
     .name {
       @include text-style(20px, 600, $color: var(--textColor));
       margin: 0 0 14px 0;
 
+      @include mini-tablets {
+        @include text-style(16px, 600, 20px, $color: var(--textColor));
+        margin: 0 0 10px 0;
+      }
+
       &::after {
         margin-top: 15px;
+        @include mini-tablets {
+          margin-top: 10px;
+        }
         content: '';
         display: block;
         @include width-height(100px, 3px);
@@ -32,6 +51,9 @@
 
     .text {
       @include text-style(14px, 400, 21px, $color: var(--textColor));
+      @include mini-tablets {
+        @include text-style(12px, 400, 21px, $color: var(--textColor));
+      }
     }
 
     .innerText {

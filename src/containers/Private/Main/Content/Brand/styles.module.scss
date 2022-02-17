@@ -1,0 +1,47 @@
+@import 'sources/styles/mixins.scss';
+
+.bannerContainer {
+    height: fit-content;
+    position: relative;
+
+    @include mini-tablets {
+        background-blend-mode: soft-light;
+        z-index: 50;
+        height: 525px;
+        opacity: 1;
+        background-color: #151515;
+        position: relative;
+        margin-bottom: 60px;
+
+        &:after {
+            content: "";
+            display: block;
+            @include width-height(100%, 100%);
+            @include position-absolute($top: 0, $left: 0);
+            background: linear-gradient(180deg, rgba(232, 181, 119, 0) 20%, rgba(232, 181, 119, 0.7) 50%, rgba(21, 21, 21, 0.9) 76%);
+            z-index: 10;
+        }
+    }
+
+    .gradient {
+        @include position-absolute($top: 600px, $right: 0);
+        @include z-index-background;
+
+        @include laptop {
+            @include position-absolute($top: 370px, $right: -200px);
+            height: 1000px;
+        }
+    }
+
+    .thread {
+       display: none;
+
+        @include mini-tablets {
+            display: block;
+            @include position-absolute($bottom: -600px, $right: 0px);
+        }
+    
+    }
+
+}
+

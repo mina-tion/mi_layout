@@ -24,9 +24,9 @@ const Set: React.FC = () => {
           <p className={styles.price}>54 990 ₽</p>
           <ThemeSwitcher />
         </div>
+        <img src={themeStore.darkTheme ? lightBike : darkBike} alt="bike" className={styles.bike} />
         <Button text="Купить" isOrange={true}/>
       </div>
-
       <div className={styles.setContainer}>
         <h4 className={styles.setTitle}>Комплект поставки</h4>
         <ul className={styles.setList}>
@@ -35,8 +35,6 @@ const Set: React.FC = () => {
           })}
         </ul>
       </div>
-
-      <img src={themeStore.darkTheme ? lightBike : darkBike} alt="bike" className={styles.bike} />
       <img src={gradient} alt="gradient" className={styles.gradient}/>
     </section>
   ))

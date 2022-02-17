@@ -1,8 +1,8 @@
 @import 'sources/styles/mixins.scss';
+
 .banner {
   @include width-height(100%, 600px);
   position: relative;
-  @include z-index-components;
   margin-bottom: 120px;
 
   @include laptop {
@@ -21,18 +21,27 @@
   .bottomLine {
     @include position-absolute($right:0, $bottom: -151px);
     @include z-index-background;
-  }
-
-  .gradient {
-    @include position-absolute($top: 600px, $right: 0);
-    @include z-index-background;
-
     @include laptop { 
-      display:  none;
+      display: none;
     }
   }
 
+ .gradient {
+    @include position-absolute($top: 600px, $right: 0);
+    @include z-index-background;
+
+    @include laptop {
+      @include position-absolute($top: 370px, $right: -100px);
+      height: 700px;
+    }
+    
+   /*  @include mini-tablets { 
+      display: none;
+    } */
+  }
   .background {
+    position: relative;
+    @include z-index-components;
     object-position: 80%;
     object-fit: cover;
     @include width-height(100%, 100%);
@@ -40,7 +49,6 @@
     @include phones {
       object-position: center;
     }
-
   }
 
   .content {
@@ -49,6 +57,7 @@
     @include flex;
     @include flex-direction(column);
     overflow: hidden;
+    z-index: 15;
 
     @include laptop {
       height: 530px;
@@ -58,6 +67,10 @@
 
     @include tablets {
       height: 420px;
+    }
+
+    @include mini-tablets { 
+      @include position-absolute($top: 20px, $left: 20px);
     }
 
     .title {
@@ -71,12 +84,23 @@
       @include tablets {
         margin: 140px 0 20px 0;
       }
-
+      @include mini-tablets {
+        @include text-style(25px, 600, 30px);
+        margin: 225px 0 10px 0;
+      }
+      color: #f1f1f1 !important;
     }
 
     .text {
       @include text-style(14px, 400, 21px, $color: #f1f1f1, $letter-spacing: -0.01em);
       margin: 0;
+      @include mini-tablets {
+        width: 350px;
+        @include text-style(12px, 400, 21px, $color: #f1f1f1, $letter-spacing: -0.01em);
+      }
+      @include phones {
+        width: 300px;
+      }
     }
   }
 }

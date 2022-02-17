@@ -19,6 +19,7 @@ import speed from 'sources/images/speedBanner.jpg'
 import brand from 'sources/images/brandBanner.png'
 
 import styles from './styles.module.scss'
+import Content from './Content'
 
 
 const Main: FC = () => {
@@ -26,30 +27,7 @@ const Main: FC = () => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <Header />
-        <main className={styles.content}>
-          <Intro />
-          <Battery />
-          <Banner
-            imgUrl={speed}
-            title={'Высокая скорость передвижения'}
-            text={`Двигатель мощностью до 600 Вт позволяет развивать скорость до 25 км/ч.`}
-            isOrange={false}
-          />
-          <Design />
-          <Safety />
-          <Mobile />
-          <Banner
-            imgUrl={brand}
-            title={'О бренде Xiaomi'}
-            text={`Компания Xiaomi была основана предпринимателем Лей Цзюнем в 2010 году под девизом - «Инновации для всех».
-            Мы верим, что высококачественные продукты и передовые технологии должны быть доступны каждому.
-            `}
-            isOrange={true}
-          />
-          <Reviews />
-          <Questions />
-          <Set />
-        </main>
+        <Content />
         <Footer />
       </div>
     </div>

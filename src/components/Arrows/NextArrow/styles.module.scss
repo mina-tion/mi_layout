@@ -9,7 +9,9 @@
     @include tablets { 
         @include position-absolute($bottom: -75px, $right: 40px);
     }
-
+    @include mini-tablets { 
+        display: none;
+    }
     border-radius: 50%;
     background-color: #FF4C0D;
     @include width-height(54px, 54px);

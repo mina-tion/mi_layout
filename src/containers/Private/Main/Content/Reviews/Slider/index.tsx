@@ -8,26 +8,29 @@ import styles from './styles.module.scss'
 
 const settings = {
   arrows: true,
-  centerMode: false,
   edgeFriction: 1,
   infinite: false,
   swipeToSlide: true,
   variableWidth: true,
   accessibility: true,
   nextArrow: <NextArrow />,
-  prevArrow: <PrevArrow />, 
+  prevArrow: <PrevArrow />,
   focusOnSelect: true,
   draggable: true,
   slidesToShow: 1,
   slidesToScroll: 1,
   speed: 500,
+  rows: 1,
 
-   responsive: [
+  responsive: [
     {
       breakpoint: 620,
       settings: {
         slidesToShow: 1,
+        slidesToScroll: 1,
         dots: true,
+        variableWidth: false,
+
         appendDots: (dots: any) => <ul> {dots} </ul>,
       },
     },
@@ -80,7 +83,8 @@ const _Slider: React.FC = () => {
           <p className={styles.text}>
             Выбирал между двумя моделями: этим Mi Scooter Pro 2 и Ninebot Max 30P, в плюсах Макса -
             десятидюймовая резина и дальность пробега на одном заряде, скорость зарядки. В плюсах
-            Xiaomi - Удобства переноски (вес аппарата, развесовка).<br />
+            Xiaomi - Удобства переноски (вес аппарата, развесовка).
+            <br />
             <br />В итоге купил Xiaomi и поставил 10 дюймовые шины - получил комфорт при небольшом
             весе самоката.
           </p>

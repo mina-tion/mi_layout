@@ -11,7 +11,10 @@ interface Props {
 const ImageCard: React.FC<Props> = ({ title, text, imgUrl }) => {
   return (
     <div className={styles.card}>
-      <img src={imgUrl} alt="design" className={styles.image} />
+      <div className={styles.imageWrapper}>
+        <img src={imgUrl} alt="design" className={styles.image} />
+      </div>
+      
       <div className={styles.description}>
         <h4 className={styles.title}>{title}</h4>
         <p className={styles.text}>{text}</p>

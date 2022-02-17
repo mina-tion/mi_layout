@@ -23,6 +23,7 @@ body,
   --introText: #151515;
   --cardBackground: #F1F1F1;
   --cardColor: #F1F1F1;
+  --sliderDots: #151515;
 }
 
 body.dark {
@@ -32,6 +33,8 @@ body.dark {
   --introText: #FF4C0D;
   --cardBackground: #222222;
   --cardColor: #151515;
+  --sliderDots: #F1F1F1;
+
 }
 
 @font-face {
@@ -89,7 +92,7 @@ body.dark {
   margin-left: auto;
   margin-right: auto;
 }
-
+ 
 .slick-arrow {
   position: absolute;
   bottom: -40px;
@@ -134,4 +137,20 @@ body.dark {
     background: green;
     opacity: 0.5;
   }
+}
+
+.slick-dots {
+  bottom: -30px;
+  
+  li button:before {
+    color: var(--sliderDots);
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  li.slick-active button:before {
+    color: var(--sliderDots);
+  }
+  margin-top: 30px;
+  margin-bottom: 30px;
 }

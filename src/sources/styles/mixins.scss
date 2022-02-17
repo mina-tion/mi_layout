@@ -91,6 +91,9 @@ $desktop2KLgDOWN: (max-width: 2560px,
   @include laptop { 
     @include text-style(30px, 600, 33px, $color: var(--textColor));
   }
+  @include mini-tablets() { 
+    @include text-style(25px, 600, 30px, $color: var(--textColor));
+  }
 }
 
 

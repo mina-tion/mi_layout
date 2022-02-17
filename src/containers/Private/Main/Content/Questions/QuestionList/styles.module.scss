@@ -11,8 +11,6 @@
   @include laptop {
     margin-top: 80px;
   }
-
-
   li {
     &:not(:last-child) { 
       margin-bottom: 40px;
@@ -22,7 +20,10 @@
     .question {
       @include text-style(20px, 600, $color: var(--textColor));
       margin: 0 0 15px 0;
-
+      @include mini-tablets { 
+        @include text-style(16px, 600, 120%, $color: var(--textColor));
+        margin: 0 0 10px 0;
+      }
       &::after {
         margin-top: 15px;
         content: '';
@@ -33,6 +34,10 @@
         @include laptop {
           width: 150px;
         }
+        @include mini-tablets { 
+          margin-top: 10px;
+        }
+
       }
     }
 
@@ -45,6 +50,9 @@
       }
       @include tablets { 
         max-width: 487px;
+      }
+      @include mini-tablets { 
+        @include text-style(12px, normal, 20px, $color: var(--textColor));
       }
     }
   }

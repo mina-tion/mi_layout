@@ -11,39 +11,104 @@
   position: relative;
   @include z-index-components;
   transition: all 0.5s ease;
-  @include laptop { 
+
+  @include wideDesktop {
+    margin: 0 340px;
+  }
+
+  @include laptop {
     @include flex-direction(column);
     margin: 0 40px;
     height: 420px;
     padding: 40px;
   }
 
+  @include mini-tablets {
+    margin: 0 40px;
+    padding: 20px;
+  }
+
+  @include phones {
+    margin: 0 20px;
+    padding: 20px;
+    height: 618px;
+    @include flex(center, center);
+  }
+
   .gradient {
     @include position-absolute($top: 0, $right: 0);
     border-radius: 15px;
     @include width-height(100%, 100%);
-
   }
 
   .description {
     @include flex(space-between, space-between);
     @include flex-direction(column);
-    height: 100%;
+    @include width-height(100%, 100%);
 
+    position: relative;
+    .bike {
+
+      @include position-absolute($left: 370px, $top: -100px);
+      z-index: 5;
+    
+      @include laptop {
+        @include position-absolute($left: 169px, $top: -64px);
+        height: 500px;
+      }
+    
+      @include mini-tablets {
+        @include position-absolute($left: 100px, $top: -64px);
+      }
+    
+      @include phones {
+        @include position-absolute($left: -65px, $top: 180px);
+        /*     width: 100%; */
+        @include width-height(380px, 260px);
+        /*    position: static;
+     */
+      }
+      
+    }
     .title {
       @include title-style($colorR: var(--textColor));
       max-width: 500px;
       margin-bottom: 10px;
 
+      @include mini-tablets {
+        width: 220px;
+      }
+
       @include laptop {
-        @include text-style(30px, 600, 33px, $color: var(--textColor))
+        @include text-style(30px, 600, 33px, $color: var(--textColor));
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      @include mini-tablets {
+        @include text-style(25px, 600, 30px, $color: var(--textColor));
+        width: 300px;
+
+      }
+
+      @include phones {
+        @include text-style(25px, 600, 30px, $color: var(--textColor));
+        width: 200px;
+        @include flex(center, center);
       }
     }
 
     .price {
       @include text-style(30px, 600, 36px, $color: #ff4c0d);
+
       @include laptop {
-        @include text-style(25px, 600, 26px,  $color: #ff4c0d)
+        @include text-style(25px, 600, 26px, $color: #ff4c0d)
+      }
+
+      @include mini-tablets {
+        @include text-style(20px, 600, 22px, $color: #ff4c0d)
       }
     }
   }
@@ -52,23 +117,26 @@
     @include flex(flex-start);
     @include flex-direction(column);
     margin-top: 4px;
-    @include laptop { 
+
+    @include laptop {
       margin-top: 10px;
     }
 
     .setTitle {
       @include text-style(20px, 600, $color: var(--textColor));
       margin-bottom: 25px;
-      @include laptop { 
+
+      @include laptop {
         margin-bottom: 0px;
       }
-      
+
     }
 
     .setList {
-      @include laptop { 
+      @include laptop {
         display: none;
       }
+
       list-style: none;
       padding-left: 0;
       @include text-style(14px, $color: var(--textColor));
@@ -80,11 +148,3 @@
   }
 }
 
-.bike {
-  @include position-absolute($left: 370px, $top: -100px);
-  z-index: 5;
-  @include laptop {
-    @include position-absolute($left: 169px, $top: -64px);
-    height: 500px;
-  }
-}

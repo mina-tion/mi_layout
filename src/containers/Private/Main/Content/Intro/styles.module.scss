@@ -51,7 +51,6 @@
         width: 400px;
       }
       @include phones { 
-        @include text-style(40px, 600, 48px, $color: #FF4C0D);
         width: 300px;
       }
     }
@@ -69,7 +68,7 @@
 
       @include mini-tablets { 
         @include text-style(16px, 600, 19.5px, $color: var(--textColor));
-        width: 400px;
+        width: 300px;
         margin-bottom: 30px;
       }
 

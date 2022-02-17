@@ -12,6 +12,7 @@ import playMarketDark from 'sources/images/icons/playMarketDark.png'
 import gradient from 'sources/images/gradients/mobile.png'
 import gradient2 from 'sources/images/gradients/mobile2.png'
 import thread from 'sources/images/threads/mobile.png'
+import thread2 from 'sources/images/threads/mobile2.png'
 
 import styles from './styles.module.scss'
 import { useObserver } from 'mobx-react'
@@ -68,7 +69,7 @@ const Mobile: React.FC = () => {
       />
 
       <img src={gradient} className={styles.gradient} alt="gradient" />
-      <img src={thread} className={styles.thread} alt="line" />
+      <img src={width <= 960 ? thread2 : thread} className={styles.thread} alt="line" />
       <img src={gradient2} className={styles.gradient2} alt="gradient" />
     </section>
   ))

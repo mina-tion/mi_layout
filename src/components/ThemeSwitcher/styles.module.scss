@@ -9,6 +9,9 @@
   transition: all 0.5s ease;
   position: relative;
 
+  @include phones { 
+    @include width-height(220px, 54px);
+  }
 
   &::after {
     content: "";
@@ -16,6 +19,9 @@
     padding: 15px 35px;
     border-radius: 65px;
     @include width-height(50%, $height: 52px);
+    @include phones { 
+      @include width-height(50%, 52px);
+    }
     @include position-absolute($top: -2px, $left: -1px);
     background:#F1F1F1;
     transition-duration: 400ms;
@@ -50,6 +56,10 @@
   &::after {
     background: #151515;
     @include position-absolute($top: -2px, $left: 123px);
+
+    @include phones { 
+      @include position-absolute($top: -2px, $left: 108px);
+    }
   }
 }
 
