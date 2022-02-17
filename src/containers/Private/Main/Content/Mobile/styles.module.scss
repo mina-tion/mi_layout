@@ -19,6 +19,10 @@
       @include position-absolute($bottom: 383px, $right: -100px);
     }
 
+    @include mini-desktop { 
+      @include position-absolute($bottom: 383px, $right: -200px);
+    }
+
     @include laptop {
       @include position-absolute($bottom: -0px, $right: 0px);
     }

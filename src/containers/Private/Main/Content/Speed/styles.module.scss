@@ -20,7 +20,12 @@
     }
 
     .thread {
-        @include position-absolute($bottom: -400px, $right: 10px);
-        transform: scale(1.1);
+        display: none;
+
+        @include mini-tablets {
+            @include position-absolute($bottom: -400px, $right: 10px);
+            transform: scale(1.1);
+        }
     }
+
 }

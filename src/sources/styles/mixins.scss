@@ -161,6 +161,12 @@ $desktop2KLgDOWN: (max-width: 2560px,
   }
 }
 
+@mixin mini-desktop {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
 @mixin laptop {
   @media screen and (max-width: 960px) {
     @content;

@@ -1,8 +1,36 @@
 @import 'sources/styles/mixins.scss';
 
+
+.container {
+    height: 525px;
+    margin-bottom: 60px;
+    position: relative;
+
+    .gradient {
+        @include position-absolute($top: 600px, $right: 0);
+        @include z-index-background;
+
+        @include laptop {
+            @include position-absolute($top: 370px, $right: -200px);
+            height: 1000px;
+            display: none;
+        }
+    }
+
+    .thread {
+        display: none;
+
+        @include mini-tablets {
+            display: block;
+            @include position-absolute($bottom: -600px, $right: 0px);
+        }
+
+    }
+}
+
 .bannerContainer {
     height: fit-content;
-    position: relative;
+
 
     @include phones {
         background-blend-mode: soft-light;
@@ -11,7 +39,6 @@
         opacity: 1;
         background-color: #151515;
         position: relative;
-        margin-bottom: 60px;
 
         &:after {
             content: "";
@@ -23,25 +50,4 @@
         }
     }
 
-    .gradient {
-        @include position-absolute($top: 600px, $right: 0);
-        @include z-index-background;
-
-        @include laptop {
-            @include position-absolute($top: 370px, $right: -200px);
-            height: 1000px;
-        }
-    }
-
-    .thread {
-       display: none;
-
-        @include mini-tablets {
-            display: block;
-            @include position-absolute($bottom: -600px, $right: 0px);
-        }
-    
-    }
-
 }
-

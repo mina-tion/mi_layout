@@ -62,6 +62,13 @@
       margin-right: 40px;
       cursor: pointer;
 
+           
+      @include mini-desktop { 
+        width: 400px;
+      }
+      @include mini-desktop { 
+        width: 33%;
+      }
       @include wideDesktop {
         width: 33%;
       }

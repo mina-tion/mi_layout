@@ -29,8 +29,11 @@
       @include position-absolute($top: 100px, $left: 320px);
     }
 
+    @include tablets {
+      @include position-absolute($top: 100px, $left: 350px);
+    }
+
     @include mini-tablets {
-      /* height: 600px; */
       width: 100%;
       transform: rotate(0deg) scale(1, 1);
       @include position-absolute($top: 860px, $left: 0px);
