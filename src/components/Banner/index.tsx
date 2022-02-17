@@ -15,7 +15,6 @@ interface Props {
 }
 
 const Banner: FC<Props> = ({ imgUrl, title, text, isOrange }) => {
-
   return (
     <section className={styles.banner}>
       <img src={imgUrl} alt="background" className={styles.background} />

@@ -9,7 +9,6 @@ import { setList } from 'utils/lists'
 import darkBike from 'sources/images/light-footer-bike.png'
 import lightBike from 'sources/images/dark-footer-bike.png'
 import gradient from 'sources/images/gradients/setCard.png'
-import thread from 'sources/images/threads/set.png'
 
 // style
 import styles from './styles.module.scss'
@@ -27,7 +26,7 @@ const Set: React.FC = () => {
           <ThemeSwitcher />
         </div>
         <img src={themeStore.darkTheme ? lightBike : darkBike} alt="bike" className={styles.bike} />
-        <Button text="Купить" isOrange={true}/>
+        <Button text="Купить" isOrange={true} />
       </div>
       <div className={styles.setContainer}>
         <h4 className={styles.setTitle}>Комплект поставки</h4>
@@ -37,8 +36,7 @@ const Set: React.FC = () => {
           })}
         </ul>
       </div>
-{/*       <img src={thread} alt="thread" className={styles.thread}/>
- */}      <img src={gradient} alt="gradient" className={styles.gradient}/>
+      <img src={gradient} alt="gradient" className={styles.gradient} />
     </section>
   ))
 }

@@ -6,7 +6,7 @@
   position: relative;
   margin-bottom: 0 !important;
 
-  @include mini-tablets { 
+  @include mini-tablets {
     @include flex-direction(column);
     align-items: center;
   }
@@ -14,13 +14,16 @@
   .thread {
     @include position-absolute($bottom: 383px, $right: 0);
     z-index: 0;
-    @include wideDesktop { 
+
+    @include wideDesktop {
       @include position-absolute($bottom: 383px, $right: -100px);
     }
-    @include laptop { 
+
+    @include laptop {
       @include position-absolute($bottom: -0px, $right: 0px);
     }
-    @include mini-tablets { 
+
+    @include mini-tablets {
       @include position-absolute($bottom: -400px, $right: 100px);
       transform: rotate(20deg) scale(-1, 1) scale(1.3);
     }
@@ -28,7 +31,8 @@
 
   .gradient {
     @include position-absolute($bottom: 0px, $right: 0);
-    @include laptop{ 
+
+    @include laptop {
       display: none;
     }
   }
@@ -36,7 +40,7 @@
   .gradient2 {
     @include position-absolute($bottom: 0px, $left: 0);
 
-    @include laptop{ 
+    @include laptop {
       @include position-absolute($bottom: 0px, $left: 0);
       height: 700px;
     }
@@ -74,7 +78,8 @@
         @include wideDesktop {
           margin-right: 50px;
         }
-        @include mini-tablets { 
+
+        @include mini-tablets {
           justify-self: center;
           margin-right: 0px;
           width: 130px;
@@ -107,13 +112,14 @@
       @include tablets {
         margin-right: 80px;
         width: 100%;
-  
+
       }
+
       @include wideDesktop {
         max-width: 100%;
       }
 
-      @include mini-tablets { 
+      @include mini-tablets {
         margin-right: 0px;
         width: 100%;
       }

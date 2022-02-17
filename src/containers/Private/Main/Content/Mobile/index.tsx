@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { useStore } from 'stores'
 
@@ -62,11 +62,7 @@ const Mobile: React.FC = () => {
         </div>
       </div>
 
-      <img
-        src={phoneSrc}
-        alt="mobile phone"
-        className={styles.phone}
-      />
+      <img src={phoneSrc} alt="mobile phone" className={styles.phone} />
 
       <img src={gradient} className={styles.gradient} alt="gradient" />
       <img src={width <= 960 ? thread2 : thread} className={styles.thread} alt="line" />

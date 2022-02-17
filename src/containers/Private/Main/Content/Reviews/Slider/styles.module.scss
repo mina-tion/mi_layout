@@ -39,9 +39,11 @@
 
       &::after {
         margin-top: 15px;
+
         @include mini-tablets {
           margin-top: 10px;
         }
+
         content: '';
         display: block;
         @include width-height(100px, 3px);
@@ -51,6 +53,7 @@
 
     .text {
       @include text-style(14px, 400, 21px, $color: var(--textColor));
+
       @include mini-tablets {
         @include text-style(12px, 400, 21px, $color: var(--textColor));
       }

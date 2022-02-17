@@ -3,15 +3,19 @@
 .nextArrow {
     cursor: pointer;
     @include position-absolute($bottom: -75px, $right: 177px);
-    @include laptop { 
+
+    @include laptop {
         @include position-absolute($bottom: -75px, $right: 80px);
     }
-    @include tablets { 
+
+    @include tablets {
         @include position-absolute($bottom: -75px, $right: 40px);
     }
-    @include mini-tablets { 
+
+    @include mini-tablets {
         display: none;
     }
+
     border-radius: 50%;
     background-color: #FF4C0D;
     @include width-height(54px, 54px);
@@ -20,6 +24,7 @@
 
     &:hover {
         background-color: #F1F1F1;
+
         .arrow {
             filter: invert(1);
             transition: all 0.7s ease;

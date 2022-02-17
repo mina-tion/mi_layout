@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC } from 'react'
 
 import { useObserver } from 'mobx-react'
 import Intro from './Intro'
@@ -15,19 +15,6 @@ import styles from './styles.module.scss'
 import Brand from './Brand'
 
 const Content: FC = () => {
-  const [width, setWidth] = useState(document.documentElement.clientWidth)
-
-  const onResize = () => {
-    setWidth(document.documentElement.clientWidth)
-  }
-
-  useEffect(() => {
-    window.addEventListener('resize', onResize)
-    return () => {
-      window.removeEventListener('resize', onResize)
-    }
-  }, [])
-
   return useObserver(() => (
     <main className={styles.content}>
       <Intro />

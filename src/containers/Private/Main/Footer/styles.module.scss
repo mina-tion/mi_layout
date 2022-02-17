@@ -7,22 +7,24 @@
   @include container-paddings;
   @include width-height(100%, 172px);
 
-  @include laptop{
+  @include laptop {
     @include width-height(100%, 198px);
     @include flex-direction(column);
-    @include flex(center, center); 
-  } 
+    @include flex(center, center);
+  }
 
   .leftContainer {
     text-align: left;
-    @include laptop { 
+
+    @include laptop {
       text-align: center;
     }
   }
 
   .rightContainer {
     text-align: right;
-    @include laptop { 
+
+    @include laptop {
       text-align: center;
     }
   }

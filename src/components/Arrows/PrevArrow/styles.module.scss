@@ -3,18 +3,19 @@
 .prevArrow {
     cursor: pointer;
     @include position-absolute($bottom: -75px, $right: 246px);
-   
-    @include laptop { 
+
+    @include laptop {
         @include position-absolute($bottom: -75px, $right: 150px);
     }
-    @include tablets { 
+
+    @include tablets {
         @include position-absolute($bottom: -75px, $right: 110px);
     }
 
-    @include mini-tablets { 
+    @include mini-tablets {
         display: none;
     }
-   
+
     border-radius: 50%;
     background-color: #F1F1F1;
     @include width-height(54px, 54px);
@@ -25,10 +26,10 @@
 
     &:hover {
         background-color: #FF4C0D;
+
         .arrow {
             filter: invert(1);
             transition: all 0.7s ease;
         }
     }
-
 }

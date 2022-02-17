@@ -1,6 +1,4 @@
-import React, { FC, useEffect, useState } from 'react'
-
-import { useObserver } from 'mobx-react'
+import React, { FC } from 'react'
 
 import Banner from 'components/Banner'
 
@@ -9,7 +7,6 @@ import thread from 'sources/images/threads/speed.png'
 import styles from './styles.module.scss'
 
 const Speed: FC = () => {
-
   return (
     <div className={styles.bannerContainer}>
       <Banner
@@ -19,7 +16,6 @@ const Speed: FC = () => {
         isOrange={false}
       />
       <img src={thread} className={styles.thread} alt="thread" />
-
     </div>
   )
 }

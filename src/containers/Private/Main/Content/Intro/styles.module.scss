@@ -3,30 +3,37 @@
 .intro {
   @include container-paddings;
   margin-top: 90px;
-  @include laptop { 
+
+  @include laptop {
     margin-top: 70px;
   }
-  @include mini-tablets { 
+
+  @include mini-tablets {
     margin-top: 240px;
   }
+
   .bikeImg {
     @include position-absolute($top: 0, $right: 0);
     z-index: 1;
+
     @include wideDesktop {
       @include flex(flex-start, space-around);
     }
 
-    @include laptop { 
+    @include laptop {
       height: 700px;
     }
-    @include tablets { 
+
+    @include tablets {
       height: 600px;
     }
-    @include mini-tablets { 
+
+    @include mini-tablets {
       height: 472px;
       right: 0px;
       top: -73px;
     }
+
     @include phones {
       height: 472px;
       right: 0px;
@@ -42,15 +49,18 @@
       @include width-height(1020px, fit-content);
       @include text-style(80px, 600, 100%, $color: var(--introTitle));
       margin: 0 0 30px 0;
-      @include laptop { 
+
+      @include laptop {
         @include text-style(40px, 600, 48px, $color: #FF4C0D);
         width: 530px;
       }
-      @include mini-tablets { 
+
+      @include mini-tablets {
         @include text-style(30px, 600, 30px, $color: #FF4C0D);
         width: 400px;
       }
-      @include phones { 
+
+      @include phones {
         width: 300px;
       }
     }
@@ -60,13 +70,13 @@
       @include text-style(30px, 600, 120%, $color: var(--introText));
       margin-bottom: 60px;
 
-      @include laptop { 
+      @include laptop {
         width: 325px;
         @include text-style(20px, 600, $color: var(--textColor));
         margin-bottom: 48px;
       }
 
-      @include mini-tablets { 
+      @include mini-tablets {
         @include text-style(16px, 600, 19.5px, $color: var(--textColor));
         width: 300px;
         margin-bottom: 30px;

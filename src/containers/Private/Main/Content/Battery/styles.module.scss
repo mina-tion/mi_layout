@@ -26,7 +26,7 @@
     @include laptop {
       width: 780px;
       margin-bottom: 40px;
- }
+    }
 
     @include tablets {
       width: 580px;
@@ -124,8 +124,8 @@
         margin-bottom: 15px;
         position: relative;
 
-        @include mini-tablets { 
-          @include text-style(16px, 600, 20px, $color:  #ff4c0d);
+        @include mini-tablets {
+          @include text-style(16px, 600, 20px, $color: #ff4c0d);
           margin-bottom: 10px;
         }
 
@@ -153,7 +153,8 @@
           @include tablets {
             width: 150px;
           }
-          @include mini-tablets { 
+
+          @include mini-tablets {
             margin: 10px 0 10px 0;
           }
 
@@ -183,6 +184,7 @@
         opacity: 0.4;
         transition: all 0.5s ease;
         @include text-style(14px, normal, 150%, $color: var(--textColor));
+
         @include laptop {
           opacity: 1;
           @include text-style(14px, normal, 160%, $color: var(--textColor));
@@ -202,6 +204,7 @@
     @include laptop {
       @include position-absolute($right:0, $bottom: 0);
     }
+
     @include mini-tablets {
       @include position-absolute($right: -90px, $bottom: 0px);
     }

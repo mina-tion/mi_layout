@@ -4,7 +4,7 @@ import cn from 'classnames'
 import { useStore } from 'stores'
 // style
 import styles from './styles.module.scss'
-import { observer, useObserver } from 'mobx-react'
+import { observer } from 'mobx-react'
 
 const ThemeSwitcher: FC = observer(() => {
   const { themeStore } = useStore()
@@ -18,7 +18,7 @@ const ThemeSwitcher: FC = observer(() => {
     changeTheme()
   }
 
-  return  (
+  return (
     <div
       className={cn(styles.switcherContainer, !darkTheme && styles.switchOn)}
       onClick={handlerClick}

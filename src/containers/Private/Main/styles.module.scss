@@ -16,10 +16,11 @@
     overflow: hidden;
     width: 100%;
     max-width: 1440px;
-    
+
     @include wideDesktop {
       max-width: 1920px;
     }
+
     @include desktop {
       max-width: 1440px;
       min-width: calc(320px + (1440 - 320) * ((100vw - 320px) / (1440 - 320)));

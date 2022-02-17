@@ -2,9 +2,11 @@
 
 .card {
   &:first-child {
-    @include laptop { 
+    @include laptop {
       margin-bottom: 40px;
-    }}
+    }
+  }
+
   @include width-height(560px, 550px);
 
   @include mini-tablets {
@@ -24,6 +26,7 @@
     border-radius: 15px;
     position: relative;
     @include width-height(100%, 100%);
+
     @include mini-tablets {
       @include width-height(100%, 450px);
     }
@@ -56,11 +59,12 @@
       @include mini-tablets {
         @include width-height(100%, 100%);
       }
-  
+
 
       &:first-child {
         margin-right: 10px;
-          &::after {
+
+        &::after {
           content: '';
           @include position-absolute(0, 0, 0, 0);
           z-index: 1;
@@ -78,7 +82,7 @@
   .description {
     @include z-index-components;
     @include position-absolute($bottom: 40px, $left: 60px);
-    
+
     @include mini-tablets {
       position: static;
       margin-bottom: 20px;
@@ -88,7 +92,7 @@
       @include text-style(20px, 600, $color: #F1F1F1);
       margin: 0 0 20px 0;
 
-      @include mini-tablets { 
+      @include mini-tablets {
         margin: 15px 0 15px 0;
         @include text-style(20px, 600, $color: var(--textColor));
       }

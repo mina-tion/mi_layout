@@ -9,9 +9,10 @@
     @include flex(center);
   }
 
-  .buttonContainer { 
+  .buttonContainer {
     @include z-index-components;
-    @include laptop { 
+
+    @include laptop {
       display: none;
     }
   }
@@ -23,7 +24,7 @@
   @include z-index-background;
   opacity: 1;
 
-  @include laptop { 
+  @include laptop {
     height: calc(500px + (800 - 500) * ((100vw - 640px) / (960 - 640)));
   }
 }
@@ -33,7 +34,8 @@
   @include position-absolute($top: -150px, $right: 0);
   @include z-index-background;
   opacity: 0.9;
-  @include laptop { 
+
+  @include laptop {
     height: calc(500px + (800 - 500) * ((100vw - 640px) / (960 - 640)));
   }
 }

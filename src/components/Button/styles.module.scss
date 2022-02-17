@@ -9,7 +9,7 @@
   text-align: center;
   @include width-height(fit-content, 54px);
 
-  @include phones { 
+  @include phones {
     @include width-height(100%, 54px);
   }
 
@@ -32,9 +32,11 @@
 .orange {
   background: #FF4C0D;
   color: #F1F1F1;
-  @include phones { 
+
+  @include phones {
     @include width-height(100%, 54px);
   }
+
   .text {
     color: #F1F1F1;
   }

@@ -13,28 +13,30 @@
 
   .title {
     @include title-style;
-    margin-bottom: 60px; 
+    margin-bottom: 60px;
     position: relative;
     z-index: 15;
+
     @include desktop {
       display: block;
       max-width: 80%;
     }
 
     @include laptop {
-      max-width: 100%; 
+      max-width: 100%;
       margin-bottom: 30px;
     }
   }
 
   .list {
-    
+
     @include flex;
     margin-bottom: 30px;
     position: relative;
     @include z-index-components;
     padding: 0;
     z-index: 15;
+
     @include laptop {
       @include flex-direction(column);
     }
@@ -57,7 +59,7 @@
       .img {
         display: none;
         margin-bottom: 40px;
-        
+
         @include laptop {
           display: block;
           width: 100%;
@@ -67,18 +69,20 @@
       &:nth-child(odd) {
         .itemTitle {
           width: 70%;
-          @include phones  {
+
+          @include phones {
             width: 100%;
           }
         }
       }
-      
+
       .itemTitle {
-     
-        @include phones  {
+
+        @include phones {
           width: 100%;
         }
       }
+
       &:last-child {
         .text {
           &::after {
@@ -116,7 +120,7 @@
           }
         }
 
-        .img { 
+        .img {
           margin-bottom: 0px;
         }
       }
@@ -136,8 +140,8 @@
           color: #ff4c0d;
         }
 
-        @include mini-tablets { 
-          @include text-style(16px, 600, 20px, $color:  #ff4c0d);
+        @include mini-tablets {
+          @include text-style(16px, 600, 20px, $color: #ff4c0d);
           margin-bottom: 10px;
         }
       }
@@ -154,6 +158,7 @@
         }
 
         @include text-style(14px, normal, 150%, $color: var(--textColor));
+
         @include laptop {
           opacity: 1;
           @include text-style(14px, normal, 160%, $color: var(--textColor));
@@ -162,7 +167,6 @@
         @include mini-tablets {
           @include text-style(12px, normal, 170%, $color: var(--textColor));
         }
-    
 
         opacity: 0.4;
         transition: all 0.5s ease;
@@ -177,6 +181,7 @@
           opacity: 0.4;
           transition: all 0.5s ease;
           margin: 15px 0 15px 0;
+
           @include laptop {
             display: none;
           }
@@ -211,11 +216,12 @@
     }
 
   }
-  .thread { 
+
+  .thread {
     display: none;
     z-index: 0;
 
-    @include mini-tablets { 
+    @include mini-tablets {
       display: block;
       @include position-absolute($top: -280px, $right: 0);
     }
@@ -225,11 +231,11 @@
     z-index: 0;
     @include position-absolute($bottom: -300px, $left: 0);
 
-    @include laptop { 
+    @include laptop {
       @include position-absolute($top: -500px, $left: -150px);
     }
 
-    @include mini-tablets { 
+    @include mini-tablets {
       @include position-absolute($top: -200px, $left: -150px);
     }
   }
@@ -244,6 +250,7 @@
     @include laptop {
       display: none;
     }
+
     max-width: 100%;
 
     .bigImg {

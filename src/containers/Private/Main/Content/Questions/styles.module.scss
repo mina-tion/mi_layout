@@ -13,7 +13,7 @@
     margin-bottom: 80px;
   }
 
-  
+
   @include mini-tablets {
     margin-bottom: 60px;
   }
@@ -29,7 +29,7 @@
       @include position-absolute($top: 100px, $left: 320px);
     }
 
-    @include mini-tablets { 
+    @include mini-tablets {
       /* height: 600px; */
       width: 100%;
       transform: rotate(0deg) scale(1, 1);
@@ -43,8 +43,9 @@
 
     @include laptop {
       @include position-absolute($top: -280px, $left: 300px);
-      
+
     }
+
     @include tablets {
       @include position-absolute($top: 200px, $left: 200px);
     }

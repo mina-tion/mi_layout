@@ -3,8 +3,7 @@
 .designBlock {
   margin-bottom: 120px;
   @include container-paddings;
-/*   @include z-index-components;
- */  position: relative;
+  position: relative;
 
   @include laptop {
     margin-bottom: 80px;
@@ -37,7 +36,7 @@
     }
 
     @include laptop {
-      display:  none;
+      display: none;
     }
   }
 

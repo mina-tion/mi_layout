@@ -26,26 +26,25 @@ const Questions: React.FC = () => {
   }, [])
   return (
     <>
-    <section className={styles.questions}>
-      <img src={width>=960 ? gradient: gradient2} className={styles.gradient} alt="gradient" />
-      <img src={width>=620 ? thread: thread2} className={styles.thread} alt="thread" />
+      <section className={styles.questions}>
+        <img src={width >= 960 ? gradient : gradient2} className={styles.gradient} alt="gradient" />
+        <img src={width >= 620 ? thread : thread2} className={styles.thread} alt="thread" />
 
-      <div className={styles.description}>
-        <div className={styles.title}>Часто задаваемые вопросы</div>
-        <p className={styles.text}>
-          Все ваши часто задаваемые вопросы о электросамокате Mi Scooter Pro 2.
-        </p>
+        <div className={styles.description}>
+          <div className={styles.title}>Часто задаваемые вопросы</div>
+          <p className={styles.text}>
+            Все ваши часто задаваемые вопросы о электросамокате Mi Scooter Pro 2.
+          </p>
 
-        <p className={styles.text}>
-          Если у вас есть собственный вопрос - задайте его через форму обратной связи.
-        </p>
-        <Button text="Задать вопрос" />
-      </div>
+          <p className={styles.text}>
+            Если у вас есть собственный вопрос - задайте его через форму обратной связи.
+          </p>
+          <Button text="Задать вопрос" />
+        </div>
 
-      <QuestionList />
-    </section>
+        <QuestionList />
+      </section>
     </>
-    
   )
 }
 

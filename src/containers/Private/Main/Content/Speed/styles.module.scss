@@ -19,8 +19,8 @@
         }
     }
 
-    .thread { 
-        @include position-absolute($bottom: -400px, $right: 10px); 
+    .thread {
+        @include position-absolute($bottom: -400px, $right: 10px);
         transform: scale(1.1);
     }
 }
