@@ -4,7 +4,7 @@
     height: fit-content;
     position: relative;
 
-    @include mini-tablets {
+    @include phones {
         background-blend-mode: soft-light;
         z-index: 50;
         height: 525px;

@@ -1,7 +1,10 @@
 @import 'sources/styles/mixins.scss';
 
 .card {
-
+  &:first-child {
+    @include laptop { 
+      margin-bottom: 40px;
+    }}
   @include width-height(560px, 550px);
 
   @include mini-tablets {
@@ -53,11 +56,11 @@
       @include mini-tablets {
         @include width-height(100%, 100%);
       }
+  
 
       &:first-child {
         margin-right: 10px;
-
-        &::after {
+          &::after {
           content: '';
           @include position-absolute(0, 0, 0, 0);
           z-index: 1;
