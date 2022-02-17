@@ -9,6 +9,8 @@ import { setList } from 'utils/lists'
 import darkBike from 'sources/images/light-footer-bike.png'
 import lightBike from 'sources/images/dark-footer-bike.png'
 import gradient from 'sources/images/gradients/setCard.png'
+import thread from 'sources/images/threads/set.png'
+
 // style
 import styles from './styles.module.scss'
 import { useObserver } from 'mobx-react'
@@ -35,7 +37,8 @@ const Set: React.FC = () => {
           })}
         </ul>
       </div>
-      <img src={gradient} alt="gradient" className={styles.gradient}/>
+{/*       <img src={thread} alt="thread" className={styles.thread}/>
+ */}      <img src={gradient} alt="gradient" className={styles.gradient}/>
     </section>
   ))
 }

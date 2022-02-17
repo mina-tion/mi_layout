@@ -6,6 +6,7 @@ import QuestionList from './QuestionList'
 import gradient from 'sources/images/gradients/questions.png'
 import gradient2 from 'sources/images/gradients/questions2.png'
 import thread from 'sources/images/threads/questions.png'
+import thread2 from 'sources/images/threads/set.png'
 
 // style
 import styles from './styles.module.scss'
@@ -27,7 +28,7 @@ const Questions: React.FC = () => {
     <>
     <section className={styles.questions}>
       <img src={width>=960 ? gradient: gradient2} className={styles.gradient} alt="gradient" />
-      <img src={thread} className={styles.thread} alt="line" />
+      <img src={width>=620 ? thread: thread2} className={styles.thread} alt="thread" />
 
       <div className={styles.description}>
         <div className={styles.title}>Часто задаваемые вопросы</div>

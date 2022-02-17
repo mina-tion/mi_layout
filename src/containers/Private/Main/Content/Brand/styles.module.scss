@@ -18,7 +18,7 @@
             display: block;
             @include width-height(100%, 100%);
             @include position-absolute($top: 0, $left: 0);
-            background: linear-gradient(180deg, rgba(232, 181, 119, 0) 20%, rgba(232, 181, 119, 0.7) 50%, rgba(21, 21, 21, 0.9) 76%);
+            background: linear-gradient(180deg, rgba(232, 181, 119, 0) 20%, rgba(232, 181, 119, 0.7) 50%, rgba(21, 21, 21, 1) 76%);
             z-index: 10;
         }
     }
