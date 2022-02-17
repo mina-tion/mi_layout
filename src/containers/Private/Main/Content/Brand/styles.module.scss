@@ -5,15 +5,16 @@
     height: 525px;
     margin-bottom: 60px;
     position: relative;
+    z-index: 10;
 
     .gradient {
         @include position-absolute($top: 600px, $right: 0);
         @include z-index-background;
 
         @include laptop {
-            @include position-absolute($top: 370px, $right: -200px);
+            @include position-absolute($top: 370px, $right: -300px);
             height: 1000px;
-            display: none;
+
         }
     }
 
@@ -28,9 +29,13 @@
     }
 }
 
+.slider {
+    z-index: 10;
+}
+
 .bannerContainer {
     height: fit-content;
-
+    overflow: hidden;
 
     @include phones {
         background-blend-mode: soft-light;
